@@ -19,9 +19,16 @@ from django.conf.urls import url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls), url(r'^$',
-                                          views.home,
-                                          name='home'), url(r'^projects$',
-                                                            views.projects,
-                                                            name='projects')
+    url(r'^$',
+        views.home,
+        name='home'), url(r'^about$',
+                          views.projects,
+                          name='about'), url(r'^admin/', admin.site.urls),
+    url(r'^contact$',
+        views.projects,
+        name='contact'), url(r'^projects$',
+                             views.projects,
+                             name='projects'), url(r'^services$',
+                                                   views.services,
+                                                   name='services')
 ]
