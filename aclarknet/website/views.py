@@ -1,7 +1,10 @@
 from django.core.mail import send_mail
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
-import os
+# from django.utils import timezone
+from .forms import ContactForm
 import datetime
+import os
 
 # Create your views here.
 
@@ -13,6 +16,7 @@ def about(request):
 
 def contact(request):
     context = {}
+    now = datetime.datetime.now
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -21,8 +25,8 @@ def contact(request):
             sender = form.cleaned_data['email']
             recipients = ['info@aclark.net']
             salesforce = os.environ.get('EMAIL_TO_SALESFORCE_ADDRESS')
-            subject = 'ACLARK.NET Contact Form Submission %s' % datetime.datetime.now(
-            ).strftime('%m/%d/%Y %H:%M:%S')
+            subject = 'ACLARK.NET Contact Form Submission %s' % now().strftime(
+                '%m/%d/%Y %H:%M:%S')
             send_mail(subject, message + '\n\n' + message2, sender, recipients)
             if salesforce:
                 send_mail(subject, message + '\n\n' + message2,
