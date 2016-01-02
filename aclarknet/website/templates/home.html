@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
-{% block content %}
-<h1>Successfully building web applications with Python for over 10 years</h1>
-<p class="lead">Create professional web applications for your business infrastructure and services; efficiently, effectively and economically with open source Python software. We'll show you how…</p>
-{% endblock %}
+
+            {% block nav %}
+            <li class="active"><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            {% endblock %}
+
+            {% block content %}
+            <h1>Successfully building web applications with Python for over 10 years</h1>
+            <p class="lead">Create professional web applications for your business infrastructure and services; efficiently, effectively and economically with open source Python software. We'll show you how…</p>
+            {% endblock %}

@@ -1,0 +1,142 @@
+.about-lead {
+    font-size: 300%;
+ /*   font-weight: bold; */
+}
+.about-team-link {
+    color: black;
+}
+.about-team-link:hover {
+    color: black;
+}
+.background-white {
+    background: white;
+}
+.bold {
+    font-weight: bold;
+}
+.border {
+    border: 1px solid #D0D0D0;
+}
+.center {
+    text-align: center;
+}
+.email {
+    width: 100%;
+    margin: 2em;
+}
+.errorlist {
+    list-style: none;
+    border-radius: 6px;
+    font-size: 18px;
+    line-height: 1.33;
+    padding: 10px 16px;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    color: #fff;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.margin {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.message, .message2 {
+    width: 100%;
+    margin: 2em;
+}
+.padding {
+    padding: 1em;
+}
+.padding-bottom {
+    padding-bottom: 1em;
+}
+.plain, .plain:hover {
+    color: #777777;
+    text-decoration: none;
+}
+.quote {
+    background-color: #f5f5f5;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 30px;
+    margin: 0 0 10px;
+    padding: 1em;
+}
+.transparent-50 {
+    opacity: 0.50;
+}
+.transparent {
+    opacity: 0.85;
+}
+.width-25 {
+    width: 25%;
+}
+.width-30 {
+    width: 30%;
+}
+.width-40 {
+    width: 40%;
+}
+.width-50 {
+    width: 50%;
+}
+.width-60 {
+    width: 60%;
+}
+.width-70 {
+    width: 70%;
+}
+.width-75 {
+    width: 75%;
+}
+.width, .width-80 {
+    width: 80%
+}
+.width-85 {
+    width: 85%
+}
+.width-90 {
+    width: 90%;
+}
+.width-django {
+    width: 320px;
+}
+.width-plone {
+    width: 320px;
+}
+.width-python {
+    width: 490px;
+}
+.width-zope {
+    width: 320px;
+}
+.wrap {
+    float: left;
+    margin: 5px 30px 0 0;
+}
+.wrap-right {
+    float: right;
+    margin-left: 15px;
+    padding: 5px;
+}
+.django-logo {
+}
+.plone-logo {
+}
+.pyramid-logo {
+}
+.zope-logo {
+}

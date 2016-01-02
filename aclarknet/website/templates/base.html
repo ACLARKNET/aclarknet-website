@@ -125,15 +125,17 @@
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-        <h3 class="text-muted">ACLARK.NET, LLC</h3>
+        <h3 class="text-muted"><a href="{% url 'home' %}">ACLARK.NET, LLC</a></h3>
         <nav>
           <ul class="nav nav-justified">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Projects</a></li>
+            {% block nav %}
+            <li class="active"><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Downloads</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
+            {% endblock %}
           </ul>
         </nav>
       </div>
