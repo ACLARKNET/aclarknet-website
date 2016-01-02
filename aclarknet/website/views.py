@@ -14,6 +14,11 @@ def about(request):
     return render(request, 'about.html', context)
 
 
+def clients(request):
+    context = {}
+    return render(request, 'clients.html', context)
+
+
 def contact(request):
     context = {}
     now = datetime.datetime.now
@@ -51,3 +56,13 @@ def projects(request):
 def services(request):
     context = {}
     return render(request, 'services.html', context)
+
+
+def testimonials(request):
+    context = {}
+    return render(request, 'testimonials.html', context)
+
+
+def team(request):
+    context = {}
+    return render(request, 'team.html', context)
