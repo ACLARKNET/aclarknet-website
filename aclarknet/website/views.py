@@ -48,6 +48,11 @@ def home(request):
     return render(request, 'home.html', context)
 
 
+def open_source(request):
+    context = {}
+    return render(request, 'open_source.html', context)
+
+
 def projects(request):
     context = {}
     return render(request, 'projects.html', context)

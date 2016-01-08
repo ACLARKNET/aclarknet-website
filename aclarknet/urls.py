@@ -28,14 +28,17 @@ urlpatterns = [
         views.clients,
         name='clients'), url(r'^contact$',
                              views.contact,
-                             name='contact'), url(r'^projects$',
-                                                  views.projects,
-                                                  name='projects'),
-    url(r'^services$',
-        views.services,
-        name='services'), url(r'^team$',
-                              views.team,
-                              name='team'), url(r'^testimonials$',
-                                                views.testimonials,
-                                                name='testimonials')
+                             name='contact'), url(r'^open-source$',
+                                                  views.open_source,
+                                                  name='open-source'),
+    url(r'^projects$',
+        views.projects,
+        name='projects'), url(r'^services$',
+                              views.services,
+                              name='services'), url(r'^team$',
+                                                    views.team,
+                                                    name='team'), url(
+                                                        r'^testimonials$',
+                                                        views.testimonials,
+                                                        name='testimonials')
 ]
