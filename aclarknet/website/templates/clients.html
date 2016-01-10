@@ -10,4 +10,15 @@
 
 {% block content %}
             <h1>Clients</h1>
+            <h2 class="width">A partial list of clients</h2>
+            {% for client in clients %}
+            <div class="background-white padding transparent">
+              <div class="row">
+                <div class="col-lg-12">
+                  <h2><i class="fa fa-{{ client.icon }}"></i>&nbsp;{{ client.name }}</h2>
+                  <p>{{ client.text }}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
 {% endblock %}
