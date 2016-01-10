@@ -44,8 +44,10 @@ urlpatterns = [
                               views.team,
                               name='team'), url(r'^testimonials$',
                                                 views.testimonials,
-                                                name='testimonials'), url(
-                                                    r'^history$',
-                                                    views.history,
-                                                    name='history')
+                                                name='testimonials'),
+    url(r'^location$',
+        views.location,
+        name='location'), url(r'^history$',
+                              views.history,
+                              name='history')
 ]

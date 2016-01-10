@@ -26,7 +26,7 @@
                 <h2>Testimonials</h2>
                 <p><i class="fa fa-thumbs-o-up fa-5x wrap"></i>&quot;{{ testimonial.text }}&quot;</p>
                 <p>&mdash;{{ testimonial.name }}</p>
-                <p class="padding"><a class="btn btn-primary" href="/about/testimonials" role="button">View Testimonials &raquo;</a></p>
+                <p class="padding"><a class="btn btn-primary" href="{% url 'testimonials' %}" role="button">View Testimonials &raquo;</a></p>
               </div>
               {% endif %}
             </div>
