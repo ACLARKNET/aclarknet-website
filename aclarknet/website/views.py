@@ -63,7 +63,7 @@ def history(request):
 def home(request):
     context = {}
     testimonials = Testimonial.objects.order_by('?')
-    if testimonials.count > 0:
+    if testimonials.count() > 0:
         testimonial = testimonials[0]
     context['testimonial'] = testimonial
     return render(request, 'home.html', context)
