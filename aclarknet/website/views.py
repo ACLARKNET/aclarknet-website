@@ -31,6 +31,11 @@ def clients(request):
     return render(request, 'clients.html', context)
 
 
+def community(request):
+    context = {}
+    return render(request, 'community.html', context)
+
+
 def contact(request):
     context = {}
     now = timezone.datetime.now
