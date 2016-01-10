@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
-            {% block nav %}
+{% block nav %}
             <li><a href="{% url 'home' %}">Home</a></li>
             <li class="active"><a href="{% url 'projects' %}">Projects</a></li>
             <li><a href="{% url 'services' %}">Services</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
-            {% endblock %}
+{% endblock %}
 
-            {% block content %}
+{% block content %}
             <h1>Projects</h1>
             <h2 class="width">If you use one of these Python web frameworks, we want to work with you</h2>
             <br />
@@ -87,4 +87,4 @@
                 </div>
                 <hr />
             </div>
-            {% endblock %}
+{% endblock %}
