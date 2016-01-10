@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from .forms import ContactForm
 from .models import Client
+from .models import TeamMember
 from .models import Testimonial
 import datetime
 import os
@@ -78,4 +79,6 @@ def testimonials(request):
 
 def team(request):
     context = {}
+    members = TeamMember.objects.all()
+    context['members'] = members
     return render(request, 'team.html', context)

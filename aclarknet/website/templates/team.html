@@ -9,5 +9,16 @@
 {% endblock %}
 
 {% block content %}
-            <h1>Team</h1>
+            <h1>Clients</h1>
+            <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications</h2>
+            {% for member in members %}
+            <div class="background-white padding transparent">
+              <div class="row">
+                <div class="col-lg-12">
+                  <h2><i class="fa fa-user"></i>&nbsp;{{ member.name }}</h2>
+                  <p>{{ member.text }}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
 {% endblock %}
