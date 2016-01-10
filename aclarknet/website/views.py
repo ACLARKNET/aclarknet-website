@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 # from django.utils import timezone
 from .forms import ContactForm
+from .models import Client
 import datetime
 import os
 
@@ -16,6 +17,8 @@ def about(request):
 
 def clients(request):
     context = {}
+    clients = Client.objects.all()
+    context['clients'] = clients
     return render(request, 'clients.html', context)
 
 
