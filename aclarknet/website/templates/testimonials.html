@@ -10,4 +10,14 @@
 
 {% block content %}
             <h1>Testimonials</h1>
+            {% for testimonial in testimonials %}
+            <div class="background-white padding transparent">
+              <div class="row">
+                <div class="col-lg-12">
+                  <h2><i class="fa fa-user"></i>&nbsp;{{ testimonial.name }}</h2>
+                  <p>{{ testimonial.text }}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
 {% endblock %}

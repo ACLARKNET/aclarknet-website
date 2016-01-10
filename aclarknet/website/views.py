@@ -1,9 +1,12 @@
+from django.conf import settings
 from django.core.mail import send_mail
+from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-# from django.utils import timezone
+from django.utils import timezone
 from .forms import ContactForm
 from .models import Client
+from .models import Testimonial
 import datetime
 import os
 
@@ -29,22 +32,17 @@ def clients(request):
 
 def contact(request):
     context = {}
-    now = datetime.datetime.now
+    now = timezone.datetime.now
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             message = form.cleaned_data['message']
-            message2 = form.cleaned_data['message2']
             sender = form.cleaned_data['email']
-            recipients = ['info@aclark.net']
-            salesforce = os.environ.get('EMAIL_TO_SALESFORCE_ADDRESS')
-            subject = 'ACLARK.NET Contact Form Submission %s' % now().strftime(
-                '%m/%d/%Y %H:%M:%S')
-            send_mail(subject, message + '\n\n' + message2, sender, recipients)
-            if salesforce:
-                send_mail(subject, message + '\n\n' + message2,
-                          'info@aclark.net', [salesforce])
-            return HttpResponseRedirect('/contact/thanks')
+            recipients = [settings.DEFAULT_FROM_EMAIL]
+            subject = 'ACLARK.NET, LLC Contact Form Submission %s' % now(
+            ).strftime('%m/%d/%Y %H:%M:%S')
+            send_mail(subject, message, sender, recipients)
+            return HttpResponseRedirect(reverse('thanks'))
     else:
         form = ContactForm()
     context['form'] = form
@@ -73,6 +71,8 @@ def services(request):
 
 def testimonials(request):
     context = {}
+    testimonials = Testimonial.objects.all()
+    context['testimonials'] = testimonials
     return render(request, 'testimonials.html', context)
 
 

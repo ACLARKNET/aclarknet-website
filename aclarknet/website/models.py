@@ -11,7 +11,9 @@ CLIENT_ICONS = (('briefcase', 'Corporate'), ('building', 'Government'), )
 
 
 class Client(models.Model):
-    icon = models.CharField(max_length=max_length, choices=CLIENT_ICONS)
+    icon = models.CharField(default='briefcase',
+                            max_length=max_length,
+                            choices=CLIENT_ICONS)
     name = models.CharField(default=None,
                             max_length=max_length,
                             blank=True,
