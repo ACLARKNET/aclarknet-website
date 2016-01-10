@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block nav %}
+            <li class="active"><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+{% endblock %}
+
+{% block content %}
+            <h1>Community</h1>
+            <div class="background-white padding transparent">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img src="{% static 'dcpython.png' %}">
+                    </div>
+                    <div class="col-lg-3">
+                        <p class="lead">In 2008, we created a 501(c)(3) non-profit organization, <a href="http://dcpython.org">DC Python</a> in Maryland, USA to expand our outreach and service to the Python community in DC.</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <p class="lead">In 2008, we made one of our most significant contributions to the community by organizing and hosting <a href="http://plone.org/2008">Plone Conference 2008</a> in DC.</p>
+                    </div>
+                    <div class="col-lg-10">
+                        <img src="{% static 'ploneconf.png' %}">
+                    </div>
+                </div>
+            </div>
+{% endblock %}

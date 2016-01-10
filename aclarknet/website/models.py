@@ -37,6 +37,7 @@ class Service(models.Model):
 
 
 class TeamMember(models.Model):
+    active = models.NullBooleanField(default=True, blank=True, null=True)
     name = models.CharField(max_length=max_length, blank=True, null=True)
     icon = models.ImageField(blank=True, null=True)
     text = models.TextField(default=None, blank=True, null=True)
