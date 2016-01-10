@@ -55,6 +55,11 @@ def contact(request):
     return render(request, 'contact.html', context)
 
 
+def history(request):
+    context = {}
+    return render(request, 'history.html', context)
+
+
 def home(request):
     context = {}
     return render(request, 'home.html', context)

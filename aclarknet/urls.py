@@ -44,5 +44,8 @@ urlpatterns = [
                               views.team,
                               name='team'), url(r'^testimonials$',
                                                 views.testimonials,
-                                                name='testimonials')
+                                                name='testimonials'), url(
+                                                    r'^history$',
+                                                    views.history,
+                                                    name='history')
 ]
