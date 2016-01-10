@@ -15,6 +15,11 @@ def about(request):
     return render(request, 'about.html', context)
 
 
+def book(request):
+    context = {}
+    return render(request, 'book.html', context)
+
+
 def clients(request):
     context = {}
     clients = Client.objects.all()
