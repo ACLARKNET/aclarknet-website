@@ -10,12 +10,11 @@
     <meta name="author" content="">
     <link rel="icon" href="{% static 'favicon.ico' %}">
 
-    <title>ACLARK.NET, LLC — DB</title>
+    <title>ACLARK.NET, LLC</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/bootstrap-table.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- Optional theme -->
@@ -24,29 +23,201 @@
     <!-- Custom styles for this template -->
     <style>
         body {
-            background: url({% static 'aclark-doe.jpg' %});
-            padding: 75px 0 50px 0;
+          background: url({% static 'aclarknet-background.jpg' %}) center top no-repeat #24261A;
         }
-        ul.nav.navbar-nav li a {
-            color: white;
+        .footer {
+          margin: 40px 0 40px 0;
+          padding: 0;
         }
-        ul.dropdown-menu li a {
-            color: black !important;
+
+        /* Main marketing message and sign up button */
+        .jumbotron {
+          text-align: center;
+          background-color: transparent;
         }
-        #content {
+        .jumbotron .btn {
+          padding: 14px 24px;
+          font-size: 21px;
+        }
+
+        /* Customize the nav-justified links to be fill the entire space of the .navbar */
+
+        .nav-justified {
+          background-color: #eee;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        .nav-justified > li > a {
+          padding-top: 15px;
+          padding-bottom: 15px;
+          margin-bottom: 0;
+          font-weight: bold;
+          color: #777;
+          text-align: center;
+          background-color: #e5e5e5; /* Old browsers */
+          background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e5e5e5));
+          background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+          background-image:      -o-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+          background-image:         linear-gradient(to bottom, #f5f5f5 0%,#e5e5e5 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+          background-repeat: repeat-x; /* Repeat the gradient */
+          border-bottom: 1px solid #d5d5d5;
+        }
+        .nav-justified > .active > a,
+        .nav-justified > .active > a:hover,
+        .nav-justified > .active > a:focus {
+          background-color: #ddd;
+          background-image: none;
+          -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
+                  box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
+        }
+        .nav-justified > li:first-child > a {
+          border-radius: 5px 5px 0 0;
+        }
+        .nav-justified > li:last-child > a {
+          border-bottom: 0;
+          border-radius: 0 0 5px 5px;
+        }
+
+        @media (min-width: 768px) {
+          .nav-justified {
+            max-height: 52px;
+          }
+          .nav-justified > li > a {
+            border-right: 1px solid #d5d5d5;
+            border-left: 1px solid #fff;
+          }
+          .nav-justified > li:first-child > a {
+            border-left: 0;
+            border-radius: 5px 0 0 5px;
+          }
+          .nav-justified > li:last-child > a {
+            border-right: 0;
+            border-radius: 0 5px 5px 0;
+          }
+        }
+
+        /* Responsive: Portrait tablets and up */
+        @media screen and (min-width: 768px) {
+          /* Remove the padding we set earlier */
+          .masthead,
+          .marketing,
+          .footer {
+            padding-right: 0;
+            padding-left: 0;
+          }
+        }
+        .about-lead {
+            font-size: 300%;
+        }
+        .about-team-link {
+            color: black;
+        }
+        .about-team-link:hover {
+            color: black;
+        }
+        .background-white {
             background: white;
-            padding-bottom: 15px;
         }
-        #company {
-            margin-bottom: 15px;
-        }
-        .currency {
-            color: green;
+        .bold {
             font-weight: bold;
         }
-        .notes {
-            background: lightyellow;
-            padding: 15px;
+        .border {
+            border: 1px solid #D0D0D0;
+        }
+        .center {
+            text-align: center;
+        }
+        .email {
+            width: 100%;
+            margin: 2em;
+        }
+        .errorlist {
+            list-style: none;
+            border-radius: 6px;
+            font-size: 18px;
+            line-height: 1.33;
+            padding: 10px 16px;
+            background-color: #d9534f;
+            border-color: #d43f3a;
+            color: #fff;
+            -moz-user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857;
+            margin-bottom: 0;
+            padding: 6px 12px;
+            text-align: center;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+        .margin {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+        .message, .message2 {
+            width: 100%;
+            margin: 2em;
+        }
+        .padding {
+            padding: 1em;
+        }
+        .padding-bottom {
+            padding-bottom: 1em;
+        }
+        .plain, .plain:hover {
+            color: #777777;
+            text-decoration: none;
+        }
+        .quote {
+            background-color: #f5f5f5;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            font-size: 21px;
+            font-weight: 200;
+            line-height: 30px;
+            margin: 0 0 10px;
+            padding: 1em;
+        }
+        .transparent-50 {
+            opacity: 0.50;
+        }
+        .transparent {
+            opacity: 0.85;
+        }
+        .width-25 {
+            width: 25%;
+        }
+        .width-30 {
+            width: 30%;
+        }
+        .width-40 {
+            width: 40%;
+        }
+        .width-50 {
+            width: 50%;
+        }
+        .width-60 {
+            width: 60%;
+        }
+        .width-70 {
+            width: 70%;
+        }
+        .width-75 {
+            width: 75%;
+        }
+        .width, .width-80 {
+            width: 80%
+        }
+        .width-85 {
+            width: 85%
+        }
+        .width-90 {
+            width: 90%;
         }
     </style>
 
@@ -58,37 +229,39 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
+
+    <div class="container">
+
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+      <div class="masthead">
+        <h3 class="text-muted"><a href="{% url 'home' %}"><img src="{% static 'aclarknet-logo.png' %}"></a></h3>
+        <nav>
+          <ul class="nav nav-justified">
             {% block nav %}
-            <li class="active"><a href="{% url 'home' %}"><i class="fa fa-home"></i></a></li>
+            <li class="active"><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'projects' %}">Projects</a></li>
             <li><a href="{% url 'services' %}">Services</a></li>
-            <li class="active"><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
             {% endblock %}
           </ul>
-        </div><!--/.nav-collapse -->
+        </nav>
       </div>
-    </nav>
 
-    <div id="content" class="container">
-      <div class="row">
-        <div class="col-md-12"> 
-{% block content %}
-{% endblock %}
+    {% block content %}
+    {% endblock %}
+
+    <hr>
+
+    <div class="footer row background-white padding transparent-50">
+        <div class="col-lg-8"><p class="lead">&copy; ACLARK.NET, LLC 2016 All rights reserved. Python™ is a registered trademark of the Python Software Foundation.</p>
         </div>
-      </div>
+        <div class="col-lg-4">
+          <p class="lead"><a href="https://github.com/ACLARKNET/aclarknet-website"><i class="fa fa-github fa-2x"></i></a> <a href="https://github.com/ACLARKNET/aclarknet-website"></i>Fork me on GitHub</a></p>
+        </div>
+    </div>
+
     </div><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
@@ -98,19 +271,9 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/bootstrap-table.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $('.dateinput').datepicker({ format: "mm/dd/yyyy", todayHighlight: "true"});
-            $('.datetimeinput').datepicker({ format: "mm/dd/yyyy", todayHighlight: "true"});
-        }); 
-    </script>
-
   </body>
 </html>
