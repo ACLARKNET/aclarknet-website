@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block nav %}
             <li><a href="{% url 'home' %}">Home</a></li>
@@ -10,81 +11,25 @@
 
 {% block content %}
             <h1>Projects</h1>
-            <h2 class="width">If you use one of these Python web frameworks, we want to work with you</h2>
-            <br />
-            <div class="background-white center padding transparent">
-                <div class="row django-logo">
-                    <div class="col-lg-12">
-                        <img class="width-django" src="/static/django-logo-positive.png">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p class="lead">
-                            <i class="fa fa-external-link"></i>&nbsp;<a href="https://www.djangoproject.com">https://www.djangoproject.com</a>
-                        </p>
-                    </div>
-                </div>
-                <hr />
-                <div class="row plone-logo">
-                    <div class="col-lg-12">
-                        <img class="width-plone" src="/static/plone-logo-256.png">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p class="lead">
-                            <i class="fa fa-external-link"></i>&nbsp;<a href="https://plone.org">https://plone.org</a>
-                        </p>
-                    </div>
-                </div>
-                <hr />
-                <div class="row pyramid-logo">
-                    <div class="col-lg-12">
-                        <img src="/static/pyramid.png">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p class="lead">
-                            <i class="fa fa-external-link"></i>&nbsp;<a href="http://www.pylonsproject.org">http://www.pylonsproject.org</a>
-                        </p>
-                    </div>
-                </div>
-                <hr />
-                <div class="row">
-                    <div class="col-lg-12">
-                        <img class="width-python" src="/static/python-logo-master-v3-TM.png">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p class="lead">
-                            <i class="fa fa-external-link"></i>&nbsp;<a href="https://www.python.org">https://www.python.org</a>
-                        </p>
-                    </div>
-                </div>
-                <hr />
-                <div class="row zope-logo">
-                    <div class="col-lg-12">
-                        <img class="width-zope" src="/static/Zope.png">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p class="lead">
-                            <i class="fa fa-external-link"></i>&nbsp;<a href="http://zope.org">http://zope.org</a>
-                        </p>
-                    </div>
-                </div>
-                <hr />
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p class="lead">
-                            Read about <a href="/open-source">our involvement with open source</a>.
-                        </p>
-                    </div>
-                </div>
-                <hr />
+            <h2 class="width-80">If you use one of these Python web frameworks, we want to work with you</h2>
+            <div class="row">
+              <div class="col-md-12 col-center">
+                <img src="{% static 'django-logo-positive.png' %}">
+                <h4>
+                  <i class="fa fa-external-link"></i>
+                  <a href="https://www.djangoproject.com">https://www.djangoproject.com</a>
+                </h4>
+              </div>
             </div>
+
+            <img class="width-plone" src="/static/plone-logo-256.png">
+            <i class="fa fa-external-link"></i>
+            <a href="https://plone.org">https://plone.org</a>
+            <img src="/static/pyramid.png">
+            <i class="fa fa-external-link"></i><a href="http://www.pylonsproject.org">http://www.pylonsproject.org</a>
+            <img class="width-python" src="/static/python-logo-master-v3-TM.png">
+            <i class="fa fa-external-link"></i>&nbsp;<a href="https://www.python.org">https://www.python.org</a>
+            <img class="width-zope" src="/static/Zope.png">
+            <i class="fa fa-external-link"></i>&nbsp;<a href="http://zope.org">http://zope.org</a>
+            Read about <a href="/open-source">our involvement with open source</a>
 {% endblock %}
