@@ -9,20 +9,20 @@
 {% endblock %}
 
 {% block content %}
+
             <div class="jumbotron">
-              <h1 class="bold width-85">Building web applications with Python for over 10 years</h1>
-              <p class="lead width-75">Create professional web applications for your business infrastructure and services; efficiently, effectively and economically with <a href="{% url 'open-source' %}">open source Python software</a>. We'll show you how…</p>
+              <h1>Building web applications with Python&trade; for over 10 years</h1>
+              <p class="lead">Create professional web applications for your business infrastructure and services; efficiently, effectively and economically with <a href="{% url 'open-source' %}">open source Python software</a>. We'll show you how…</p>
               <a class="btn btn-lg btn-success" href="{% url 'contact' %}">Get Started Today</a>
             </div>
-
             <div class="row">
-              <div class="col-md-4 background-white">
+              <div class="col-md-4">
                 <h2>Projects</h2>
                 <p><i class="fa fa-cog fa-5x wrap"></i> From <a href="https://www.djangoproject.com/">Django</a> to <a href="http://zope.org/">Zope</a>, to <a href="https://plone.org/">Plone</a> and <a href="http://www.pylonsproject.org/">Pyramid</a> in between; we develop, deploy, maintain and support Python-based web applications with unparalleled skill and expertise.</p>
                 <p class="padding"><a class="btn btn-primary" href="{% url 'projects' %}" role="button">View Projects &raquo;</a></p>
               </div>
               {% if testimonial %}
-              <div class="col-md-4 background-white transparent">
+              <div class="col-md-4">
                 <h2>Testimonials</h2>
                 <p><i class="fa fa-thumbs-o-up fa-5x wrap"></i>&quot;{{ testimonial.text }}&quot;</p>
                 <p>&mdash;{{ testimonial.name }}</p>
