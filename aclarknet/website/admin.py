@@ -1,7 +1,8 @@
 from django.contrib import admin
 from .models import Client
+from .models import Developer
+from .models import Partner
 from .models import Service
-from .models import TeamMember
 from .models import Testimonial
 
 # Register your models here.
@@ -19,8 +20,14 @@ class ServiceAdmin(admin.ModelAdmin):
     """
 
 
-@admin.register(TeamMember)
-class TeamMemberAdmin(admin.ModelAdmin):
+@admin.register(Developer)
+class DeveloperAdmin(admin.ModelAdmin):
+    """
+    """
+
+
+@admin.register(Partner)
+class PartnerAdmin(admin.ModelAdmin):
     """
     """
 

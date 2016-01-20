@@ -14,23 +14,20 @@
             <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications</h2>
             <div class="background-white padding transparent">
               <div class="row">
-              <div class="col-lg-12">
-                  <h2><i class="fa fa-user"></i>&nbsp;Alex Clark, Partner, President</h2>
-                  <p class="lead"><img class="img-thumbnail wrap" src="{% static 'aclark-jobs-75-100.jpg' %}">Alex Clark is a <a href="http://about.me/alex.clark">Python Web Developer & Musician</a>. He has a Bachelor of Science in Computer Science from Loyola University in Maryland and has <a href="http://www.linkedin.com/in/aclark4life">worked professionally</a> as a System Administrator, Network Engineer and Software Engineer since 1998. He is also the president of <a href="http://dcpython.org">DC Python</a>, a non-profit organization focused on promoting Python software in DC. In 2008, he organized and hosted <a href="http://plone.org/2008">Plone Conference 2008</a> in DC; in 2010, he wrote <a href="https://www.packtpub.com/web-development/plone-33-site-administration">Plone 3.3 Site Administration</a>; in 2012, he appeared on <a href="https://us.pycon.org/2012/community/startuprow/">Startup Row at PyCon 2012</a> with <a href="http://pythonpackages.com">pythonpackages.com</a>. Read more about Alex <a href="http://about.aclark.net">here</a>.</p>
-              </div>
-              <hr>
-              <div class="col-lg-12">
-                  <h2><i class="fa fa-user"></i>&nbsp;Amy Clark, Partner, Business Coordinator</h2>
-                  <p class="lead"><img class="img-thumbnail wrap" src="{% static 'amy-may-2003.png' %}">Amy Clark brings many years of professional sales, marketing, management, administrative and financial/legal experience to the ACLARK.NET, LLC team. She facilitates the smooth and uncomplicated engagement of our services and ensures the quality, accuracy and efficiency of all ACLARK.NET, LLC client accounts.</p>
-              </div>
+              {% for partner in partners %}
+                <div class="col-lg-12">
+                    <h2><i class="fa fa-user"></i>&nbsp;{{ partner.name }}</h2>
+                    <p class="lead"><img class="img-thumbnail wrap" src="{{ partner.photo }}">{{ partner.description }}</p>
+                </div>
+              {% endfor %}
             </div>
             </div>
-              {% for member in members %}
+              {% for developer in developers %}
               <div class="background-white padding transparent">
                 <div class="row">
                   <div class="col-lg-12">
                     <h2><i class="fa fa-user"></i>&nbsp;{{ member.name }}</h2>
-                    <p>{{ member.text }}</p>
+                    <p>{{ member.description }}</p>
                   </div>
                 </div>
               </div>
