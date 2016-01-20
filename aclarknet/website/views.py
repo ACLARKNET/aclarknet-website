@@ -45,8 +45,8 @@ def contact(request):
             message = form.cleaned_data['message']
             sender = form.cleaned_data['email']
             recipients = [settings.DEFAULT_FROM_EMAIL]
-            subject = 'ACLARK.NET, LLC Contact Form Submission %s' % now(
-            ).strftime('%m/%d/%Y %H:%M:%S')
+            subject = settings.DEFAULT_SUBJECT % now().strftime(
+                '%m/%d/%Y %H:%M:%S')
             send_mail(subject, message, sender, recipients)
             return HttpResponseRedirect(reverse('thanks'))
     else:

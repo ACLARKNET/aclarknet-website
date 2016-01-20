@@ -1,3 +1,4 @@
+# encoding: utf-8
 """
 Django settings for aclarknet project.
 
@@ -82,8 +83,8 @@ DATABASES = {'default': dj_database_url.config(default=os.environ.get(
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME':
-        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'UserAttributeSimilarityValidator',
     },
     #    {
     #        'NAME':
@@ -122,3 +123,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+
+DEFAULT_SUBJECT = 'ACLARK.NET, LLC Website — Contact Form Submission %s'
