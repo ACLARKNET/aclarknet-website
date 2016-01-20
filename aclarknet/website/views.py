@@ -20,6 +20,11 @@ def about(request):
     return render(request, 'about.html', context)
 
 
+def page(request, slug=None):
+    context = {}
+    return render(request, 'page.html', context)
+
+
 def book(request):
     context = {}
     return render(request, 'book.html', context)
