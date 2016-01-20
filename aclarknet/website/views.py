@@ -27,7 +27,7 @@ def book(request):
 
 def clients(request):
     context = {}
-    clients = Client.objects.all()
+    clients = Client.objects.filter(active=True)
     context['clients'] = clients
     return render(request, 'clients.html', context)
 
@@ -92,15 +92,15 @@ def services(request):
 
 def testimonials(request):
     context = {}
-    testimonials = Testimonial.objects.all(active=True)
+    testimonials = Testimonial.objects.filter(active=True)
     context['testimonials'] = testimonials
     return render(request, 'testimonials.html', context)
 
 
 def team(request):
     context = {}
-    developers = Developer.objects.all(active=True)
-    partners = Partner.objects.all(active=True)
-    context['developers'] = developer
+    developers = Developer.objects.filter(active=True)
+    partners = Partner.objects.filter(active=True)
+    context['developers'] = developers
     context['partners'] = partners
     return render(request, 'team.html', context)

@@ -1,4 +1,5 @@
 Django==1.9.1
+django-solo
 Pillow
 dj-database-url
 gunicorn
