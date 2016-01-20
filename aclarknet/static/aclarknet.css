@@ -1,6 +1,7 @@
 .col-center {
-    text-align: center;
+  text-align: center;
 }
-.width-80 {
-    width: 80%;
+#content {
+  background-color: white !important;
+  opacity: 0.9;
 }
