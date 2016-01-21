@@ -1,15 +1,15 @@
-from django.conf import settings
-from django.core.mail import send_mail
-from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.utils import timezone
 from .forms import ContactForm
 from .models import Client
 from .models import Developer
 from .models import Partner
 from .models import Service
 from .models import Testimonial
+from django.conf import settings
+from django.core.mail import send_mail
+from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from django.utils import timezone
 import datetime
 import os
 
