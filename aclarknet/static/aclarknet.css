@@ -5,3 +5,9 @@
   background-color: white !important;
   opacity: 0.9;
 }
+.jumbotron {
+  margin-top: 20px;
+}
+.jumbotron h1 {
+  font-weight: bold;
+}
