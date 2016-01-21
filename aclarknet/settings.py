@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aclarknet.website',
+    'crispy_forms',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -86,14 +87,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.'
                 'UserAttributeSimilarityValidator',
     },
-    #    {
-    #        'NAME':
-    #        'django.contrib.auth.password_validation.MinimumLengthValidator',
-    #    },
-    #    {
-    #        'NAME':
-    #        'django.contrib.auth.password_validation.CommonPasswordValidator',
-    #    },
     {
         'NAME':
         'django.contrib.auth.password_validation.NumericPasswordValidator',
@@ -125,3 +118,5 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 
 DEFAULT_SUBJECT = 'ACLARK.NET, LLC Website — Contact Form Submission %s'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

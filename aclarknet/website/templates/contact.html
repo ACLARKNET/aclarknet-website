@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block nav %}
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'projects' %}">Projects</a></li>
@@ -10,9 +12,9 @@
 
 {% block content %}
             <h1>Contact</h1>
-            <div class="background-white center padding transparent">
-              <form action="" method="post">
-              {{ form }}
+            <div class="jumbotron">
+              <form action="" method="post">{% csrf_token %}
+              {{ form|crispy }}
               <button class="btn btn-lg btn-success" type="submit">Send Message</button>
               </form>
             </div>
