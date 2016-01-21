@@ -12,31 +12,49 @@
             <h1>About</h1>
             <div class="jumbotron">
               <div class="row">
-                <i class="fa fa-building"></i>&nbsp;<a href="{% url 'clients' %}">Clients</a>
+                <div class="col-md-6">
+                  <h2><i class="fa fa-building"></i>&nbsp;<a href="{% url 'clients' %}">Clients</a></h2>
+                </div>
+                <div class="col-md-6">
+                  <h2><i class="fa fa-thumbs-o-up"></i>&nbsp;<a href="{% url 'testimonials' %}">Testimonials</a></h2>
+                </div>
               </div>
+              <hr>
               <div class="row">
-                <i class="fa fa-thumbs-o-up"></i>&nbsp;<a href="{% url 'testimonials' %}">Testimonials</a>
+                <div class="col-md-6">
+                  <h2><i class="fa fa-users"></i>&nbsp;<a href="{% url 'team' %}">Team</a></h2>
+                </div>
+                <div class="col-md-6">
+                  <h2><i class="fa fa-globe"></i>&nbsp;<a href="{% url 'location' %}">Location</a></h2>
+                </div>
               </div>
+              <hr>
               <div class="row">
-                <i class="fa fa-users"></i>&nbsp;<a href="{% url 'team' %}">Team</a>
+                <div class="col-md-6">
+                  <h2><i class="fa fa-book"></i>&nbsp;<a href="{% url 'book' %}">Book</a></h2>
+                </div>
+                <div class="col-md-6">
+                  <h2><i class="fa fa-book"></i>&nbsp;<a href="http://blog.aclark.net">Blog</a></h2>
+                </div>
               </div>
+              <hr>
               <div class="row">
-                <i class="fa fa-book"></i>&nbsp;<a href="{% url 'book' %}">Book</a>
+                <div class="col-md-12">
+                  <h2><i class="fa fa-globe"></i>&nbsp;<a href="{% url 'open-source' %}">Open Source</a></h2>
+                </div>
               </div>
+              <hr>
               <div class="row">
-                <i class="fa fa-book"></i>&nbsp;<a href="http://blog.aclark.net">Blog</a>
+                <div class="col-md-12">
+                  <h2><i class="fa fa-globe"></i>&nbsp;<a href="{% url 'community' %}">Community</a></h2>
+                </div>
               </div>
+              <hr>
               <div class="row">
-                <i class="fa fa-globe"></i>&nbsp;<a href="{% url 'open-source' %}">Open Source</a>
+                <div class="col-md-12">
+                  <h2><i class="fa fa-clock-o"></i>&nbsp;<a href="{% url 'history' %}">History</a></h2>
+                </div>
               </div>
-              <div class="row">
-                <i class="fa fa-globe"></i>&nbsp;<a href="{% url 'community' %}">Community</a>
-              </div>
-              <div class="row">
-                <i class="fa fa-clock-o"></i>&nbsp;<a href="{% url 'history' %}">History</a>
-              </div>
-              <div class="row">
-                <i class="fa fa-globe"></i>&nbsp;<a href="{% url 'location' %}">Location</a>
-              </div>
+              <hr>
             </div>
 {% endblock %}

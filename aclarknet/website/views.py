@@ -8,6 +8,7 @@ from .forms import ContactForm
 from .models import Client
 from .models import Developer
 from .models import Partner
+from .models import Service
 from .models import Testimonial
 import datetime
 import os
@@ -92,6 +93,8 @@ def projects(request):
 
 def services(request):
     context = {}
+    services = Service.objects.filter(active=True)
+    context['services'] = services
     return render(request, 'services.html', context)
 
 
