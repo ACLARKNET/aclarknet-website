@@ -1,7 +1,7 @@
 .col-center {
   text-align: center;
 }
-.jumbotron, #content {
+.jumbotron {
   background-color: white !important;
   margin-top: 20px;
   opacity: 0.9;
