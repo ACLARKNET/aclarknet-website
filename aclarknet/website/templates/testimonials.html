@@ -11,11 +11,11 @@
 {% block content %}
             <h1>Testimonials</h1>
             {% for testimonial in testimonials %}
-            <div class="background-white padding transparent">
+            <div class="jumbotron">
               <div class="row">
                 <div class="col-md-12">
-                  <h2><i class="fa fa-user"></i>&nbsp;{{ testimonial.name }}</h2>
-                  <p>{{ testimonial.text }}</p>
+                  <h2><i class="fa fa-user"></i>&nbsp;{{ testimonial.author }}</h2>
+                  <p>{{ testimonial.testimonial }}</p>
                 </div>
               </div>
             </div>
