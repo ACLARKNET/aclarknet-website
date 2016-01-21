@@ -1,12 +1,10 @@
 .col-center {
   text-align: center;
 }
-#content {
+.jumbotron, .row {
   background-color: white !important;
-  opacity: 0.9;
-}
-.jumbotron {
   margin-top: 20px;
+  opacity: 0.9;
 }
 .jumbotron h1 {
   font-weight: bold;
