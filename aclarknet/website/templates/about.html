@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block nav %}
             <li><a href="{% url 'home' %}">Home</a></li>
@@ -11,6 +12,12 @@
 {% block content %}
             <h1>About</h1>
             <div class="jumbotron">
+              <div class="row">
+                <img class="width-python" src="{% static 'python-logo-master-v3-TM.png' %}">
+                <h4><i class="fa fa-external-link"></i>&nbsp;<a href="https://www.python.org">https://www.python.org</a></h4>
+                <p class="lead">The Python programming language and open source provide tremendous opportunities, but often require an expert to manage. We are able & available to help by providing services to empower individuals and organizations to benefit from these opportunities.</p>
+              </div>
+              <hr>
               <div class="row">
                 <div class="col-md-6">
                   <h2><i class="fa fa-building"></i>&nbsp;<a href="{% url 'clients' %}">Clients</a></h2>
