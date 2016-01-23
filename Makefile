@@ -29,6 +29,10 @@ review:
 	open -a "Sublime Text 2" `find $(project) -name \*.py | grep -v __init__.py` `find $(project) -name \*.html`
 serve:
 	python manage.py runserver
+shell:
+	python manage.py shell
+shell-remote:
+	heroku run bash
 start:
 	-mkdir -p $(project)/$(app)
 	-django-admin startproject $(project) .
