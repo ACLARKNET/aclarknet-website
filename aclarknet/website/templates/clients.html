@@ -12,11 +12,11 @@
             <h1>Clients</h1>
             <h2 class="width">Partial List of Clients</h2>
             {% for client in clients %}
-            <div class="background-white padding transparent">
+            <div class="jumbotron">
               <div class="row">
                 <div class="col-md-12">
                   <h2><i class="fa fa-{{ client.icon }}"></i>&nbsp;{{ client.name }}</h2>
-                  <p>{{ client.text }}</p>
+                  <p>{{ client.description }}</p>
                 </div>
               </div>
             </div>
