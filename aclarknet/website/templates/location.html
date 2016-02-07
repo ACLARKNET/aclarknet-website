@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load staticfiles %}
+
 {% block nav %}
             <li class="active"><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'projects' %}">Projects</a></li>
@@ -10,5 +12,9 @@
 
 {% block content %}
             <h1>Location</h1>
-            <p class="lead">We are located in Bethesda, MD USA, a suburb of Washington, DC USA. We service a global community of individuals and organizations and are always eager and available to help.</p>
+            <div class="jumbotron">
+              <h3>Bethesda, MD USA</h3>
+              <img class="img-thumbnail" src="{% static 'bethesda-fountain.jpg' %}">
+              <p class="lead">We are located in Bethesda, MD USA, a suburb of Washington, DC USA. We service a global community of individuals and organizations and are always eager and available to help.</p>
+            </div>
 {% endblock %}
