@@ -2,6 +2,7 @@ Django==1.9.1
 django-solo
 django-crispy-forms
 Pillow
+cloudinary
 dj-database-url
 gunicorn
 psycopg2

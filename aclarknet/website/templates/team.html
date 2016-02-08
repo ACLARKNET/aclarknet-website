@@ -12,24 +12,24 @@
 {% block content %}
             <h1>Team</h1>
             <div class="jumbotron">
+              <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications</h2>
+              <h1>Partners</h1>
               <div class="row">
-                <h3>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications</h3>
               {% for partner in partners %}
                 <div class="col-md-12">
-                    <h2><i class="fa fa-user"></i>&nbsp;{{ partner.name }}</h2>
-                    <p class="lead"><img class="img-thumbnail wrap" src="{{ partner.photo }}">{{ partner.description }}</p>
+                  <h2><i class="fa fa-user"></i>&nbsp;{{ partner.name }}</h2>
+                  <p class="lead"><img class="img-thumbnail wrap" src="{{ partner.photo }}">{{ partner.description }}</p>
                 </div>
               {% endfor %}
-            </div>
-            </div>
+              </div>
+              <h1>Developers</h1>
               {% for developer in developers %}
-              <div class="background-white padding transparent">
-                <div class="row">
-                  <div class="col-md-12">
-                    <h2><i class="fa fa-user"></i>&nbsp;{{ member.name }}</h2>
-                    <p>{{ member.description }}</p>
-                  </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <h2><i class="fa fa-user"></i>&nbsp;{{ developer.name }}</h2>
+                  <p class="lead"><img class="img-thumbnail wrap" src="{{ developer.photo }}">{{ developer.description }}</p>
                 </div>
               </div>
-            {% endfor %}
+              {% endfor %}
+            </div>
 {% endblock %}

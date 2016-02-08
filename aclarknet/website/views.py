@@ -10,8 +10,6 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.utils import timezone
-import datetime
-import os
 
 # Create your views here.
 
