@@ -1,5 +1,4 @@
 from .forms import ContactForm
-from .models import Client
 from .models import Developer
 from .models import Partner
 from .models import Service
@@ -10,8 +9,11 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.utils import timezone
+import requests
 
 # Create your views here.
+
+CLIENT_URL = 'https://db.aclark.net/api/clients/?format=json'
 
 
 def about(request):
@@ -31,7 +33,7 @@ def book(request):
 
 def clients(request):
     context = {}
-    clients = Client.objects.filter(active=True)
+    clients = requests.get(CLIENT_URL).json()
     context['clients'] = clients
     return render(request, 'clients.html', context)
 

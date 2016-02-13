@@ -6,4 +6,5 @@ cloudinary
 dj-database-url
 gunicorn
 psycopg2
+requests
 whitenoise

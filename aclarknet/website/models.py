@@ -8,23 +8,7 @@ from .utils import class_name_pk
 
 MAX_LENGTH = 300
 
-CLIENT_ICONS = (('briefcase', 'Corporate'), ('building', 'Government'), )
 SERVICE_ICONS = (('briefcase', 'Corporate'), ('building', 'Government'), )
-
-
-class Client(models.Model):
-    active = models.NullBooleanField(default=True, blank=True, null=True)
-    icon = models.CharField(default='briefcase',
-                            max_length=MAX_LENGTH,
-                            choices=CLIENT_ICONS)
-    description = models.TextField(default=None, blank=True, null=True)
-    name = models.CharField(default=None,
-                            max_length=MAX_LENGTH,
-                            blank=True,
-                            null=True)
-
-    def __unicode__(self):
-        return class_name_pk(self)
 
 
 class Company(SingletonModel):
@@ -46,7 +30,7 @@ class Service(models.Model):
     description = models.TextField(default=None, blank=True, null=True)
     icon = models.CharField(default='briefcase',
                             max_length=MAX_LENGTH,
-                            choices=CLIENT_ICONS)
+                            choices=SERVICE_ICONS)
 
     def __unicode__(self):
         return class_name_pk(self)
