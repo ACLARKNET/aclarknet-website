@@ -51,13 +51,3 @@ class Partner(models.Model):
 
     def __unicode__(self):
         return class_name_pk(self)
-
-
-class Testimonial(models.Model):
-    active = models.NullBooleanField(default=True, blank=True, null=True)
-    author = models.CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    date = models.DateTimeField(default=None, blank=True, null=True)
-    testimonial = models.TextField(blank=True, null=True)
-
-    def __unicode__(self):
-        return class_name_pk(self)

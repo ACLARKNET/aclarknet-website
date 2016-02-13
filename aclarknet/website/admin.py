@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import Developer
 from .models import Page
 from .models import Partner
-from .models import Testimonial
 
 # Register your models here.
 
@@ -22,11 +21,5 @@ class PageAdmin(admin.ModelAdmin):
 
 @admin.register(Partner)
 class PartnerAdmin(admin.ModelAdmin):
-    """
-    """
-
-
-@admin.register(Testimonial)
-class TestimonialAdmin(admin.ModelAdmin):
     """
     """

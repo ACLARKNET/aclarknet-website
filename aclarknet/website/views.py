@@ -1,7 +1,6 @@
 from .forms import ContactForm
 from .models import Developer
 from .models import Partner
-from .models import Testimonial
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.urlresolvers import reverse
@@ -14,6 +13,7 @@ import requests
 
 CLIENT_URL = 'https://db.aclark.net/api/clients/?format=json'
 SERVICE_URL = 'https://db.aclark.net/api/services/?format=json'
+TESTIMONIAL_URL = 'https://db.aclark.net/api/testimonials/?format=json'
 
 
 def about(request):
@@ -69,10 +69,7 @@ def history(request):
 
 def home(request):
     context = {}
-    testimonials = Testimonial.objects.order_by('?')
-    if testimonials.count() > 0:
-        testimonial = testimonials[0]
-        context['testimonial'] = testimonial
+    context['testimonial'] = None
     return render(request, 'home.html', context)
 
 
@@ -100,7 +97,7 @@ def services(request):
 
 def testimonials(request):
     context = {}
-    testimonials = Testimonial.objects.filter(active=True)
+    testimonials = requests.get(TESTIMONIAL_URL).json()
     context['testimonials'] = testimonials
     return render(request, 'testimonials.html', context)
 
