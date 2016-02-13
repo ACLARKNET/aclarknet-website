@@ -14,6 +14,7 @@ import requests
 # Create your views here.
 
 CLIENT_URL = 'https://db.aclark.net/api/clients/?format=json'
+SERVICE_URL = 'https://db.aclark.net/api/service/?format=json'
 
 
 def about(request):
@@ -93,7 +94,7 @@ def projects(request):
 
 def services(request):
     context = {}
-    services = Service.objects.filter(active=True)
+    services = requests.get(SERVICE_URL).json()
     context['services'] = services
     return render(request, 'services.html', context)
 
