@@ -1,7 +1,6 @@
 from .forms import ContactForm
 from .models import Developer
 from .models import Partner
-from .models import Service
 from .models import Testimonial
 from django.conf import settings
 from django.core.mail import send_mail
