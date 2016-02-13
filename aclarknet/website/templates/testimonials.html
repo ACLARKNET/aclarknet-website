@@ -14,8 +14,8 @@
             {% for testimonial in testimonials %}
               <div class="row">
                 <div class="col-md-12">
-                  <h2><i class="fa fa-user"></i>&nbsp;{{ testimonial.name }}</h2>
-                  <p>"{{ testimonial.description }}"</p>
+                  <p class="lead">"{{ testimonial.description }}"</p>
+                  <h4>&mdash; <i class="fa fa-user"></i>&nbsp;{{ testimonial.name }}, {{ testmimonial.issue_date }}</h4>
                 </div>
               </div>
             {% endfor %}
