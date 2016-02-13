@@ -13,7 +13,7 @@ import requests
 # Create your views here.
 
 CLIENT_URL = 'https://db.aclark.net/api/clients/?format=json'
-SERVICE_URL = 'https://db.aclark.net/api/service/?format=json'
+SERVICE_URL = 'https://db.aclark.net/api/services/?format=json'
 
 
 def about(request):
