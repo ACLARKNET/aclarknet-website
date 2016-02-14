@@ -14,10 +14,10 @@
             <div class="jumbotron">
               <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications</h2>
               <div class="row">
-              {% for developer in developers %}
+              {% for profile in profiles %}
               <div class="row">
                 <div class="col-md-12">
-                  <h2><i class="fa fa-user"></i>&nbsp;{{ user.name }}</h2>
+                  <h2><i class="fa fa-user"></i>&nbsp;{{ profile.username }}</h2>
                   <p class="lead"><img class="img-thumbnail wrap" src="{{ user.profile.photo }}">{{ user.profile.bio }}</p>
                 </div>
               </div>

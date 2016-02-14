@@ -15,6 +15,7 @@ import requests
 CLIENT_URL = 'https://db.aclark.net/api/clients/?format=json'
 SERVICE_URL = 'https://db.aclark.net/api/services/?format=json'
 TESTIMONIAL_URL = 'https://db.aclark.net/api/testimonials/?format=json'
+PROFILE_URL = 'https://db.aclark.net/api/profiles/?format=json'
 
 
 def about(request):
@@ -106,8 +107,6 @@ def testimonials(request):
 
 def team(request):
     context = {}
-    developers = Developer.objects.filter(active=True)
-    partners = Partner.objects.filter(active=True)
-    context['developers'] = developers
-    context['partners'] = partners
+    profiles = requests.get(PROFILE_URL).json()
+    context['profiles'] = profiles
     return render(request, 'team.html', context)
