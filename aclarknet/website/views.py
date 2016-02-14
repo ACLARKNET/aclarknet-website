@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.utils import timezone
+import random
 import requests
 
 # Create your views here.
@@ -69,7 +70,8 @@ def history(request):
 
 def home(request):
     context = {}
-    context['testimonial'] = None
+    testimonials = requests.get(TESTIMONIAL_URL).json()
+    context['testimonial'] = random.choice(testimonials)
     return render(request, 'home.html', context)
 
 
