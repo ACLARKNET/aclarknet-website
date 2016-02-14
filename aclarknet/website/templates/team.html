@@ -14,13 +14,14 @@
             <div class="jumbotron">
               <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications</h2>
               <div class="row">
-              {% for profile in profiles %}
-              <div class="row">
-                <div class="col-md-12">
-                  <h2><i class="fa fa-user"></i>&nbsp;{{ profile.user.username }}</h2>
-                  <p class="lead"><img class="img-thumbnail wrap" src="{{ profile.photo_url }}">{{ profile.bio }}</p>
+                {% for profile in profiles %}
+                <div class="row">
+                  <div class="col-md-12">
+                    <h2><i class="fa fa-user"></i>&nbsp;{{ profile.user.username }}</h2>
+                    <p class="lead"><img class="img-thumbnail wrap" src="{{ profile.photo_url }}">{{ profile.bio }}</p>
+                  </div>
                 </div>
+                {% endfor %}
               </div>
-              {% endfor %}
             </div>
 {% endblock %}
