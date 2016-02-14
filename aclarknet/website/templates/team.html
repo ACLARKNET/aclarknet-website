@@ -17,8 +17,8 @@
                 {% for profile in profiles %}
                 <div class="row">
                   <div class="col-md-12">
-                    <h2><i class="fa fa-user"></i>&nbsp;{{ profile.user.username }}</h2>
-                    <p class="lead"><img class="img-thumbnail wrap" src="{{ profile.photo_url }}">{{ profile.bio }}</p>
+                    <h2><i class="fa fa-user"></i>{{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
+                    <p class="lead"><img class="img-thumbnail wrap" src="{{ profile.avatar_url }}">{{ profile.bio }}</p>
                   </div>
                 </div>
                 {% endfor %}
