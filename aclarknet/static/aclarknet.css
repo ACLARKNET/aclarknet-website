@@ -10,9 +10,8 @@
 .jumbotron h1 {
   font-weight: bold;
 }
-#footer {
-  margin: 20px 0 20px 0;
-  color: #fefefe;
+.radius-zero {
+  border-radius: 0 !important;
 }
 .row {
   margin: 0 0.5px 0 0.5px;
