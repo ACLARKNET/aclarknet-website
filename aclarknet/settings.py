@@ -120,3 +120,12 @@ DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 DEFAULT_SUBJECT = 'ACLARK.NET, LLC Website — Contact Form Submission %s'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Send mail with sendgrid
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get('SENDGRID_USERNAME')
+EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD')
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Alex Clark <aclark@aclark.net>'
+MANAGERS = ('aclark@aclark.net', )
