@@ -16,6 +16,15 @@
 .jumbotron h1 {
   font-weight: bold;
 }
+.logo-django {
+    width: 320px;
+}
+.logo-plone {
+    width: 320px;
+}
+.logo-zope {
+    width: 320px;
+}
 .radius-zero {
   border-radius: 0 !important;
 }
