@@ -2,6 +2,7 @@ from .forms import ContactForm
 from .models import Developer
 from .models import Partner
 from django.conf import settings
+from django.contrib import messages
 from django.core.mail import send_mail
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
@@ -57,7 +58,9 @@ def contact(request):
             subject = settings.DEFAULT_SUBJECT % now().strftime(
                 '%m/%d/%Y %H:%M:%S')
             send_mail(subject, message, sender, recipients)
-            return HttpResponseRedirect(reverse('thanks'))
+            messages.add_message(request, messages.INFO,
+                                 'Thank you! Expect a reply within 24 hours.')
+            return HttpResponseRedirect(reverse('contact'))
     else:
         form = ContactForm()
     context['form'] = form
