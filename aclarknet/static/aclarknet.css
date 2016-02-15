@@ -4,6 +4,9 @@
 .center {
   text-align: center;
 }
+#footer {
+  background: #24261A !important;
+}
 .jumbotron {
   background-color: white !important;
   margin-top: 20px;
