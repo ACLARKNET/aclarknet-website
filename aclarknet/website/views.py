@@ -58,8 +58,9 @@ def contact(request):
             subject = settings.DEFAULT_SUBJECT % now().strftime(
                 '%m/%d/%Y %H:%M:%S')
             send_mail(subject, message, sender, recipients)
-            messages.add_message(request, messages.INFO,
-                                 'Thank you! Expect a reply within 24 hours.')
+            messages.add_message(
+                request, messages.INFO,
+                'Thank you! Please expect our reply within 24 hours.')
             return HttpResponseRedirect(reverse('contact'))
     else:
         form = ContactForm()
