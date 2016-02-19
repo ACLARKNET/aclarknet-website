@@ -17,7 +17,7 @@
                 {% for profile in profiles %}
                 <div class="row">
                   <div class="col-md-12">
-                    <h2 id="{{profile.username }}"><i class="fa fa-user"></i> {{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
+                    <h2 id="{{profile.get_username }}"><i class="fa fa-user"></i> {{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
                     <p class="lead"><img class="img-thumbnail wrap" src="{{ profile.get_avatar_url }}">{{ profile.bio|default:'' }}</p>
                   </div>
                 </div>
