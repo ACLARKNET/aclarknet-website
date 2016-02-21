@@ -112,3 +112,7 @@ def team(request):
     profiles = requests.get(PROFILE_URL).json()
     context['profiles'] = profiles
     return render(request, 'team.html', context)
+
+
+def now(request):
+    return HttpResponseRedirect('http://blog.aclark.net/now')

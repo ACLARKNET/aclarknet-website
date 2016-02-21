@@ -33,4 +33,5 @@ urlpatterns = [
     url(r'^testimonials$', views.testimonials, name='testimonials'),
     url(r'^location$', views.location, name='location'),
     url(r'^history$', views.history, name='history'),
+    url(r'^now$', views.now, name='now'),
 ]
