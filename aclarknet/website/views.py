@@ -11,10 +11,10 @@ import requests
 
 # Create your views here.
 
-CLIENT_URL = 'https://db.aclark.net/api/clients/?format=json'
-SERVICE_URL = 'https://db.aclark.net/api/services/?format=json'
-TESTIMONIAL_URL = 'https://db.aclark.net/api/testimonials/?format=json'
-PROFILE_URL = 'https://db.aclark.net/api/profiles/?format=json'
+CLIENT_URL = 'https://aclarknet-database.herokuapp.com/api/clients/?format=json'
+SERVICE_URL = 'https://aclarknet-database.herokuapp.com/api/services/?format=json'
+TESTIMONIAL_URL = 'https://aclarknet-database.herokuapp.com/api/testimonials/?format=json'
+PROFILE_URL = 'https://aclarknet-database.herokuapp.com/api/profiles/?format=json'
 
 
 def about(request):
