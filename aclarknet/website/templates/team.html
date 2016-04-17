@@ -21,6 +21,7 @@
                     <p class="lead"><img class="img-thumbnail wrap" src="{{ profile.get_avatar_url }}">{{ profile.bio|safe|default:'' }}</p>
                   </div>
                 </div>
+                {% if not forloop.last %}<hr>{% endif %}
                 {% endfor %}
               </div>
             </div>
