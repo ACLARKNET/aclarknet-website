@@ -18,7 +18,7 @@
                       <p class="lead">{{ service.description|linebreaks }}</p>
                   </div>
               </div>
-              <hr />
+              {% if not forloop.last %}<hr>{% endif %}
               {% endfor %}
             </div>
 {% endblock %}
