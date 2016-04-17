@@ -62,6 +62,6 @@
                   <h2><i class="fa fa-clock-o"></i>&nbsp;<a href="{% url 'history' %}">History</a></h2>
                 </div>
               </div>
-              <hr>
+              {% if not forloop.last %}<hr>{% endif %}
             </div>
 {% endblock %}
