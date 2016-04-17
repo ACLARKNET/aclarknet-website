@@ -112,3 +112,7 @@ yapf:
 	-yapf -i *.py
 	-yapf -i -e $(project)/urls.py $(project)/*.py
 	-yapf -i $(project)/$(app)/*.py
+
+# ACLARK website
+remote:
+	git remote add heroku https://git.heroku.com/aclarknet-website.git
