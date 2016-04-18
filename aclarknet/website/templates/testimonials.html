@@ -23,7 +23,7 @@
                   <h4 class="pull-right">&mdash;{{ testimonial.name }}</h4>
                 </div>
               </div>
-              <hr>
+              {% if not forloop.last %}<hr>{% endif %}
             {% endfor %}
             </div>
 {% endblock %}
