@@ -13,16 +13,14 @@
             <h1>Team</h1>
             <div class="jumbotron">
               <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications</h2>
+              {% for profile in profiles %}
               <div class="row">
-                {% for profile in profiles %}
-                <div class="row">
-                  <div class="col-md-12">
-                    <h2 id="{{profile.get_username }}"><i class="fa fa-user"></i> {{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
-                    <p class="lead"><img class="img-thumbnail wrap" src="{{ profile.get_avatar_url }}">{{ profile.bio|safe|default:'' }}</p>
-                  </div>
+                <div class="col-md-12">
+                  <h2 id="{{profile.get_username }}"><i class="fa fa-user"></i> {{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
+                  <p class="lead"><img class="img-thumbnail wrap" src="{{ profile.get_avatar_url }}">{{ profile.bio|safe|default:'' }}</p>
                 </div>
-                {% if not forloop.last %}<hr>{% endif %}
-                {% endfor %}
               </div>
+              {% if not forloop.last %}<hr>{% endif %}
+              {% endfor %}
             </div>
 {% endblock %}
