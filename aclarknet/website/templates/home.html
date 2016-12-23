@@ -69,6 +69,7 @@ id nibh ultricies vehicula ut id elit.</p>
 {% block content %}
 
       <!-- Three columns of text below the carousel -->
+      <!--
       <div class="row">
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
@@ -78,7 +79,7 @@ euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi
 leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
  cursus magna.</p>
           <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
+        </div>
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Heading</h2>
@@ -87,7 +88,7 @@ ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
 sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor 
 mauris condimentum nibh.</p>
           <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
+        </div>
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Heading</h2>
@@ -96,8 +97,9 @@ in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
 Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
  ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+        </div>
+      </div>
+      -->
 
 
       <!-- START THE FEATURETTES -->
@@ -114,8 +116,8 @@ tellus ac cursus commodo.</p>
         </div>
         <div class="col-md-5">
           <div class="jumbotron" style="border-radius: 0px">
-            <p><i class="fa fa-cog fa-2x wrap"></i> From <a href="https://www.djangoproject.com/">Django</a> to <a href="http://zope.org/">Zope</a>, to <a href="https://plone.com">Plone</a> and <a href="http://www.pylonsproject.org/">Pyramid</a> in between; if you are using one of these Python-based web frameworks, we want to work with you.</p>
-            <p class="padding"><a class="btn btn-primary" href="{% url 'projects' %}" role="button">View Projects &raquo;</a></p>
+            <p><i class="fa fa-cog"></i> From <a href="https://www.djangoproject.com/">Django</a> to <a href="http://zope.org/">Zope</a>, to <a href="https://plone.com">Plone</a> and <a href="http://www.pylonsproject.org/">Pyramid</a> in between; if you are using one of these Python-based web frameworks, we want to work with you.</p>
+            <p class="padding"><a class="btn btn-lg btn-primary" href="{% url 'projects' %}" role="button">View projects</a></p>
           </div>
         </div>
       </div>
@@ -140,12 +142,12 @@ tellus ac cursus commodo.</p>
             </div>
             <div class="row">
               <div class="col-md-12">
-                <p class="lead"><i class="fa fa-thumbs-up fa-2x wrap"></i> <i class="fa fa-quote-left"></i> {{ testimonial.description }} <i class="fa fa-quote-right"></i></p>
+                <p class="lead"><i class="fa fa-quote-left"></i> {{ testimonial.description }} <i class="fa fa-quote-right"></i></p>
                 <h4 class="pull-right">&mdash;{{ testimonial.name }}</h4>
               </div>
             </div>
             <br>
-            <p class="padding"><a class="btn btn-primary" href="{% url 'testimonials' %}" role="button">View Testimonials &raquo;</a></p>
+            <p class="padding"><a class="btn btn-lg btn-primary" href="{% url 'testimonials' %}" role="button">View testimonials</a></p>
           </div>
           {% endif %}
         </div>
