@@ -1,30 +1,4 @@
 {% extends 'base.html' %}
-
-{% block nav %}
-        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="{% url 'about' %}" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-          <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
-            <a class="dropdown-item" href="{% url 'about' %}">ACLARK.NET, LLC</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'book' %}">Book</a>
-            <a class="dropdown-item" href="http://blog.aclark.net">Blog</a>
-            <a class="dropdown-item" href="{% url 'clients' %}">Clients</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'open-source' %}">Code</a>
-            <a class="dropdown-item" href="{% url 'community' %}">Community</a>
-            <a class="dropdown-item" href="{% url 'history' %}">History</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'location' %}">Location</a>
-            <a class="dropdown-item" href="{% url 'team' %}">Team</a>
-            <a class="dropdown-item" href="{% url 'testimonials' %}">Testimonials</a>
-          </div>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
-{% endblock %}
-
 {% block content %}
             <h1>Testimonials</h1>
             <div class="jumbotron" style="border-radius: 0">
