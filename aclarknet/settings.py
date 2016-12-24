@@ -55,30 +55,31 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'aclarknet.urls'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
+TEMPLATES = [{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [],
+    'APP_DIRS': True,
+    'OPTIONS': {
+        'context_processors': [
+            'django.template.context_processors.debug',
+            'django.template.context_processors.request',
+            'django.contrib.auth.context_processors.auth',
+            'django.contrib.messages.context_processors.messages',
+        ],
     },
-]
+}, ]
 
 WSGI_APPLICATION = 'aclarknet.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.config(default=os.environ.get(
-    'HEROKU_POSTGRESQL_BRONZE_URL', 'postgres://%s:@localhost:5432/aclarknet' %
-    os.environ.get('USER', '')))}
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.environ.get('HEROKU_POSTGRESQL_BRONZE_URL',
+                               'postgres://%s:@localhost:5432/aclarknet' %
+                               os.environ.get('USER', '')))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -86,7 +87,7 @@ DATABASES = {'default': dj_database_url.config(default=os.environ.get(
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.'
-                'UserAttributeSimilarityValidator',
+        'UserAttributeSimilarityValidator',
     },
     {
         'NAME':

@@ -328,6 +328,8 @@ vagrant-update:
 	vagrant box update
 
 # ACLARK website
+APP=website
+PROJECT=aclarknet
 heroku-remote:
 	git remote add heroku https://git.heroku.com/aclarknet-website.git
 heroku-remote2:
