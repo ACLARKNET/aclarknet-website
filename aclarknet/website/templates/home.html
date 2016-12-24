@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
 {% block nav %}
         <li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
@@ -25,10 +24,8 @@
         </li>
         <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
 {% endblock %}
-
 {% block carousel %}
-    <!-- Carousel
-    ================================================== -->
+    <!-- Carousel ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -82,7 +79,6 @@ id nibh ultricies vehicula ut id elit.</p>
       </a>
     </div><!-- /.carousel -->
 {% endblock %}
-
 {% block content %}
 
       <!-- START THE FEATURETTES -->
