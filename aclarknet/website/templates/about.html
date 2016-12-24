@@ -3,50 +3,28 @@
 {% block content %}
             <h1>About</h1>
             <div class="center jumbotron" style="border-radius: 0">
-              <div class="row">
-                <img class="width-python" src="{% static 'python-logo-master-v3-TM.png' %}">
-                <h4><i class="fa fa-external-link"></i>&nbsp;<a href="https://www.python.org">https://www.python.org</a></h4>
+              <div class="row" style="text-align: center">
+                <img class="img-thumbnail" src="{% static 'python-logo-master-v3-TM.png' %}">
+                <h4><a href="https://www.python.org" target="_blank">https://www.python.org</a></h4>
                 <p class="lead">The Python programming language and open source provide tremendous opportunity, but often require an expert to take advantage of. We are able & available to help by providing services to empower individuals and organizations to benefit from these opportunities.</p>
               </div>
               <hr>
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-4">
                   <h2><i class="fa fa-location-arrow"></i>&nbsp;<a href="{% url 'location' %}">Location</a></h2>
-                </div>
-                <div class="col-md-6">
                   <h2><i class="fa fa-user"></i>&nbsp;<a href="{% url 'team' %}">Team</a></h2>
-                </div>
-                <div class="col-md-6">
                   <h2><i class="fa fa-thumbs-o-up"></i>&nbsp;<a href="{% url 'testimonials' %}">Testimonials</a></h2>
                 </div>
-              </div>
-              <hr>
-              <div class="row">
                 <div class="col-md-4">
                   <h2><i class="fa fa-building"></i>&nbsp;<a href="{% url 'clients' %}">Clients</a></h2>
-                </div>
-                <div class="col-md-4">
                   <h2><i class="fa fa-code"></i>&nbsp;<a href="{% url 'open-source' %}">Code</a></h2>
-                </div>
-                <div class="col-md-4">
                   <h2><i class="fa fa-globe"></i>&nbsp;<a href="{% url 'community' %}">Community</a></h2>
                 </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <h2><i class="fa fa-book"></i>&nbsp;<a href="http://blog.aclark.net">Blog</a></h2>
-                </div>
-                <div class="col-md-6">
                   <h2><i class="fa fa-book"></i>&nbsp;<a href="{% url 'book' %}">Book</a></h2>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-md-12">
                   <h2><i class="fa fa-clock-o"></i>&nbsp;<a href="{% url 'history' %}">History</a></h2>
                 </div>
               </div>
-              <hr>
             </div>
 {% endblock %}
