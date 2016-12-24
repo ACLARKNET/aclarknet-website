@@ -32,7 +32,7 @@
               <div class="row">
                   <div class="col-md-12">
                       <h2 id="{{ service.name|lower }}">{{ service.name }}</h2>
-                      <p class="lead">{{ service.description|linebreaks }}</p>
+                      <p class="lead"><i class="fa fa-cog fa-5x pull-left"></i>{{ service.description|linebreaks }}</p>
                   </div>
               </div>
               {% if not forloop.last %}<hr>{% endif %}
