@@ -28,31 +28,25 @@
 
 {% block content %}
             <h1>Projects</h1>
-            <div class="center jumbotron" style="border-radius: 0">
-              <h2>If you are using one of these Python-based web frameworks, we want to work with you:</h2>
-              <br>
-              <div class="row">
-                <img class="logo-django" src="{% static 'django-logo-positive.png' %}">
-                <h4><i class="fa fa-external-link"></i>&nbsp;<a href="https://www.djangoproject.com">https://www.djangoproject.com</a></h4>
-              </div>
+            <div class="jumbotron" style="border-radius: 0; text-align: center">
+              <h2>If you are using one of these Python-based web frameworks, we want to work with you. If you are not, we can give you compelling reasons to try.</h2>
+
+              <img class="img-thumbnail logo-django" src="{% static 'django-logo-positive.png' %}">
+              <h4><a href="https://www.djangoproject.com" target="_blank">https://www.djangoproject.com</a></h4>
+
+              <img class="img-thumbnail logo-plone" src="{% static 'plone-logo-256.png' %}">
+              <h4><a href="https://plone.com">https://plone.com</a></h4>
+
+              <img class="img-thumbnail" src="{% static 'pyramid.png' %}">
+              <h4><a href="http://www.pylonsproject.org">http://www.pylonsproject.org</a></h4>
+
+              <img class="img-thumbnail logo-zope" src="{% static 'Zope.png' %}">
+              <h4><a href="https://en.wikipedia.org/wiki/Zope">https://en.wikipedia.org/wiki/Zope</a></h4>
+
               <hr>
-              <div class="row">
-                <img class="logo-plone" src="{% static 'plone-logo-256.png' %}">
-                <h4><i class="fa fa-external-link"></i>&nbsp;<a href="https://plone.com">https://plone.com</a></h4>
+              <div style="text-align: center">
+                <h4>Read about our <a href="{% url 'open-source' %}">open source contributions</a>&hellip;</h4>
               </div>
-              <hr>
-              <div class="row">
-                <img src="{% static 'pyramid.png' %}">
-                <h4><i class="fa fa-external-link"></i>&nbsp;<a href="http://www.pylonsproject.org">http://www.pylonsproject.org</a></h4>
-              </div>
-              <hr>
-              <div class="row">
-                <img class="logo-zope" src="{% static 'Zope.png' %}">
-                <h4><i class="fa fa-external-link"></i>&nbsp;<a href="http://zope.org">http://zope.org</a></h4>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="center"><h4>Read about our <a href="{% url 'open-source' %}">open source contributions</a></h4></div>
-              </div>
+
             </div>
 {% endblock %}
