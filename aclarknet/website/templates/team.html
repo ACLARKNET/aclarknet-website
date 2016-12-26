@@ -4,11 +4,15 @@
             <h1>Team</h1>
             <div class="jumbotron" style="border-radius: 0">
               <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications</h2>
+              <hr>
               {% for profile in profiles %}
               <div class="row">
                 <div class="col-md-12">
                   <h2 id="{{profile.get_username }}"><i class="fa fa-user"></i> {{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
-                  <p class="lead"><img class="img-thumbnail rounded-circle pull-left" src="{{ profile.get_avatar_url }}">{{ profile.bio|safe|default:'' }}</p>
+                  <div class="row">
+                    <div class="col-md-2"><img class="img-thumbnail rounded-circle pull-left" src="{{ profile.get_avatar_url }}"></div>
+                    <div class="col-md-10"><p class="lead">{{ profile.bio|safe|default:'' }}</p></div>
+                  </div>
                 </div>
               </div>
               {% if not forloop.last %}<hr>{% endif %}
