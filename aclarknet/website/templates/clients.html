@@ -3,7 +3,7 @@
             <h1>Clients</h1>
             <div class="jumbotron" style="border-radius: 0">
               <h2>A partial list of valued clients</h2>
-              <hr>
+              <hr class="featurette-divider">
               {% for client in clients %}
               <div class="row">
                 <div class="col-md-12">
@@ -11,7 +11,7 @@
                   <p>{{ client.description }}</p>
                 </div>
               </div>
-              {% if not forloop.last %}<hr>{% endif %}
+              {% if not forloop.last %}<hr class="featurette-divider">{% endif %}
               {% endfor %}
             </div>
 {% endblock %}

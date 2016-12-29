@@ -84,9 +84,9 @@ def location(request):
     return render(request, 'location.html', context)
 
 
-def open_source(request):
+def opensource(request):
     context = {}
-    return render(request, 'open_source.html', context)
+    return render(request, 'opensource.html', context)
 
 
 def projects(request):
