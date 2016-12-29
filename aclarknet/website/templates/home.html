@@ -62,6 +62,24 @@ id nibh ultricies vehicula ut id elit.</p>
       <hr class="featurette-divider">
 
       <div class="row featurette">
+        <div class="col-md-7 push-md-5">
+          <h2 class="featurette-heading">Testimonials. <span class="text-muted">Don't take our word for it, read our testimonials.</span></h2>
+        </div>
+        <div class="col-md-5 pull-md-7">
+          {% if testimonial %}
+          <div class="jumbotron" style="border-radius: 0px">
+            <h4 class="pull-right outline text-white">{{ testimonial.issue_date }}</h4>
+            <p class="lead"><i class="fa fa-quote-left"></i> <strong>{{ testimonial.description }}</strong> <i class="fa fa-quote-right"></i></p>
+            <h4>&mdash;{{ testimonial.name }}</h4>
+            <p style="text-align: center;margin-top: 28px"><a class="btn btn-lg btn-primary" href="{% url 'testimonials' %}" role="button">View testimonials</a></p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Web Frameworks. <span class="text-muted">If they're Python-based, we use them.</span></h2>
           <p class="lead">We use Python-based web frameworks to great advantage.</p>
@@ -74,22 +92,4 @@ id nibh ultricies vehicula ut id elit.</p>
         </div>
       </div>
 
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 push-md-5">
-          <h2 class="featurette-heading">Testimonials. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Don't take our word for it, read these testimonials.</p>
-        </div>
-        <div class="col-md-5 pull-md-7">
-          {% if testimonial %}
-          <div class="jumbotron" style="border-radius: 0px">
-            <h4 class="pull-right bg-inverse rounded text-white">{{ testimonial.issue_date }}</h4>
-            <p class="lead"><i class="fa fa-quote-left"></i> <strong>{{ testimonial.description }}</strong> <i class="fa fa-quote-right"></i></p>
-            <h4>&mdash;{{ testimonial.name }}</h4>
-            <p style="text-align: center;margin-top: 28px"><a class="btn btn-lg btn-primary" href="{% url 'testimonials' %}" role="button">View testimonials</a></p>
-          </div>
-          {% endif %}
-        </div>
-      </div>
 {% endblock %}

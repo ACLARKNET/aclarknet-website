@@ -10,3 +10,12 @@
 .marketing {
     margin-top: 1em;
 }
+
+.outline {
+    background-color: transparent;
+    border: 1px solid #5A5A5A;
+    border-radius: 5%;
+    color: #5A5A5A !important;
+    padding: 0.5em;
+    margin: 0 0 1em 1em;
+}
