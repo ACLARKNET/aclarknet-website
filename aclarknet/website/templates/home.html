@@ -84,8 +84,8 @@ id nibh ultricies vehicula ut id elit.</p>
         <div class="col-md-5 pull-md-7">
           {% if testimonial %}
           <div class="jumbotron" style="border-radius: 0px">
-            <h4 class="pull-right">{{ testimonial.issue_date }}</h4>
-            <p class="lead"><i class="fa fa-quote-left"></i> {{ testimonial.description }} <i class="fa fa-quote-right"></i></p>
+            <h4 class="pull-right bg-inverse rounded text-white">{{ testimonial.issue_date }}</h4>
+            <p class="lead"><i class="fa fa-quote-left"></i> <strong>{{ testimonial.description }}</strong> <i class="fa fa-quote-right"></i></p>
             <h4>&mdash;{{ testimonial.name }}</h4>
             <p style="text-align: center;margin-top: 28px"><a class="btn btn-lg btn-primary" href="{% url 'testimonials' %}" role="button">View testimonials</a></p>
           </div>
