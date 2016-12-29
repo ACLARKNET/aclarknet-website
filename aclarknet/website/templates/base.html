@@ -31,33 +31,37 @@
 
   </head>
   <body>
-
     <nav class="navbar navbar-static-top navbar-light bg-faded" style="border-radius: 0">
-      <a href="{% url 'home' %}" class="navbar-brand">ACLARK.NET, LLC</a>
-      <ul class="nav navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="{% url 'about' %}" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-          <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
-            <a class="dropdown-item" href="{% url 'about' %}">ACLARK.NET, LLC</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'book' %}"><i class="fa fa-book"></i> Book</a>
-            <a class="dropdown-item" href="http://blog.aclark.net" target="_blank"><i class="fa fa-bullhorn"></i> Blog</a>
-            <a class="dropdown-item" href="{% url 'clients' %}"><i class="fa fa-building"></i> Clients</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'open-source' %}"><i class="fa fa-code"></i> Open Source</a>
-            <a class="dropdown-item" href="{% url 'community' %}"><i class="fa fa-users"></i> Community</a>
-            <a class="dropdown-item" href="{% url 'history' %}"><i class="fa fa-clock-o"></i> History</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'location' %}"><i class="fa fa-globe"></i> Location</a>
-            <a class="dropdown-item" href="{% url 'team' %}"><i class="fa fa-users"></i> Team</a>
-            <a class="dropdown-item" href="{% url 'testimonials' %}"><i class="fa fa-thumbs-o-up"></i> Testimonials</a>
-          </div>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
-      </ul>
+      <div class="clearfix">
+        <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#bd-main-nav" aria-controls="bd-main-nav" aria-expanded="false" aria-label="Toggle navigation"></button>
+      </div>
+      <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
+        <a href="{% url 'home' %}" class="navbar-brand">ACLARK.NET, LLC</a>
+        <ul class="nav navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'about' %}" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
+              <a class="dropdown-item" href="{% url 'about' %}">ACLARK.NET, LLC</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'book' %}"><i class="fa fa-book"></i> Book</a>
+              <a class="dropdown-item" href="http://blog.aclark.net" target="_blank"><i class="fa fa-bullhorn"></i> Blog</a>
+              <a class="dropdown-item" href="{% url 'clients' %}"><i class="fa fa-building"></i> Clients</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'open-source' %}"><i class="fa fa-code"></i> Open Source</a>
+              <a class="dropdown-item" href="{% url 'community' %}"><i class="fa fa-users"></i> Community</a>
+              <a class="dropdown-item" href="{% url 'history' %}"><i class="fa fa-clock-o"></i> History</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'location' %}"><i class="fa fa-globe"></i> Location</a>
+              <a class="dropdown-item" href="{% url 'team' %}"><i class="fa fa-users"></i> Team</a>
+              <a class="dropdown-item" href="{% url 'testimonials' %}"><i class="fa fa-thumbs-o-up"></i> Testimonials</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     {% block carousel %}
