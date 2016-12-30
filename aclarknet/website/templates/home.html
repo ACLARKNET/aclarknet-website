@@ -63,15 +63,19 @@ id nibh ultricies vehicula ut id elit.</p>
 
       <div class="row featurette">
         <div class="col-md-7 push-md-5">
-          <h2 class="featurette-heading">Testimonials. <span class="text-muted">Don't take our word for it, read our testimonials.</span></h2>
+          <h2 class="featurette-heading">Testimonials. <span class="text-muted">Don't take our word for it.</span></h2>
+          <p class="lead">Read testimonials from our clients.</p>
         </div>
         <div class="col-md-5 pull-md-7">
           {% if testimonial %}
-          <div class="jumbotron" style="border-radius: 0px">
-            <h4 class="pull-right outline text-white">{{ testimonial.issue_date }}</h4>
-            <p class="lead"><i class="fa fa-quote-left"></i> <strong>{{ testimonial.description }}</strong> <i class="fa fa-quote-right"></i></p>
-            <h4>&mdash;{{ testimonial.name }}</h4>
-            <p style="text-align: center;margin-top: 28px"><a class="btn btn-lg btn-primary" href="{% url 'testimonials' %}" role="button">View testimonials</a></p>
+
+          <div class="card" style="border-radius: 0">
+            <h3 class="card-header pull-right">{{ testimonial.issue_date }}</h3>
+            <div class="card-block">
+              <p class="card-text"><i class="fa fa-quote-left"></i> {{ testimonial.description }} <i class="fa fa-quote-right"></i></p>
+              <h4 class="card-title">&mdash;{{ testimonial.name }}</h4>
+              <a class="btn btn-lg btn-primary" href="{% url 'testimonials' %}" role="button">View testimonials</a>
+            </div>
           </div>
           {% endif %}
         </div>
