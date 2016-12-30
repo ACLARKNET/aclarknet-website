@@ -63,15 +63,13 @@ id nibh ultricies vehicula ut id elit.</p>
 
       <div class="row featurette">
         <div class="col-md-7 push-md-5">
-          <h2 class="featurette-heading">Testimonials. <span class="text-muted">Don't take our word for it.</span></h2>
-          <p class="lead">Read testimonials from our clients.</p>
+          <h2 class="featurette-heading">Testimonials. <span class="text-muted">Don't take our word for it. Read testimonials from our clients.</span></h2>
         </div>
         <div class="col-md-5 pull-md-7">
           {% if testimonial %}
-
           <div class="card" style="border-radius: 0">
-            <h3 class="card-header pull-right">{{ testimonial.issue_date }}</h3>
-            <div class="card-block">
+            <h3 class="card-header"><i class="fa fa-calendar"></i> {{ testimonial.issue_date }}</h3>
+            <div class="card-block" style="text-align: center">
               <p class="card-text"><i class="fa fa-quote-left"></i> {{ testimonial.description }} <i class="fa fa-quote-right"></i></p>
               <h4 class="card-title">&mdash;{{ testimonial.name }}</h4>
               <a class="btn btn-lg btn-primary" href="{% url 'testimonials' %}" role="button">View testimonials</a>
