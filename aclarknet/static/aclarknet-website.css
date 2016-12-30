@@ -1,16 +1,21 @@
 .logo-django {
+    margin: 0 0.5em 0 0;
     width: 320px;
 }
 .logo-plone {
+    margin: 0 0 0 0.5em;
     width: 320px;
 }
+.logo-pyramid {
+    margin: 0 0.5em 0 0;
+}
 .logo-zope {
+    margin: 0 0 0 0.5em;
     width: 320px;
 }
 .marketing {
     margin-top: 1em;
 }
-
 .outline {
     background-color: transparent;
     border: 1px solid #5A5A5A;
