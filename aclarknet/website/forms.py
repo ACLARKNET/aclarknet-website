@@ -10,4 +10,4 @@ class ContactForm(forms.Form):
         label='How can we help?',
         widget=forms.Textarea(attrs={'class': 'message'}))
     captcha = ReCaptchaField(
-        label='Are you human?')
+        label='Are you a human?')
