@@ -3,13 +3,13 @@
 {% block content %}
             <h1>Contact</h1>
             <div class="jumbotron" style="border-radius: 0">
+              <h2>Please contact us to schedule a time to discuss your needs. We look forward to working with you.</h2>
+              <hr class="featurette-divider">
               {% if messages %}{% for message in messages %}<div {% if message.tags %}class="alert alert-{{ message.tags }}"{% endif %} role="alert">{{ message }}</div>{% endfor %}{% endif %}
-              <p class="lead">Please contact us to schedule a time to discuss your needs. We look forward to working with you.</p>
               <form action="" method="post">{% csrf_token %}
               {{ form|crispy }}
               <div class="g-recaptcha" data-sitekey="6LdoKcYSAAAAAFcnVKiKAYkg71mfnRdxA404ZJUu"></div>
               <button class="btn btn-lg btn-success" type="submit">Send Message</button>
               </form>
             </div>
-            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 {% endblock %}
