@@ -5,7 +5,7 @@
             {% for testimonial in testimonials %}
               <div class="row">
                 <div class="col-md-12 bg-inverse rounded">
-                  <h4 class="pull-right text-white">{{ testimonial.issue_date }}</h4>
+                  <h4 class="pull-right text-white" style="margin-top: 0.3em"><i class="fa fa-calendar"></i> {{ testimonial.issue_date }}</h4>
                 </div>
               </div>
               <div class="row">
@@ -14,7 +14,7 @@
                   <h4 class="pull-right">&mdash;{{ testimonial.name }}</h4>
                 </div>
               </div>
-              {% if not forloop.last %}<hr>{% endif %}
+              {% if not forloop.last %}<hr class="featurette-divider">{% endif %}
             {% endfor %}
             </div>
 {% endblock %}
