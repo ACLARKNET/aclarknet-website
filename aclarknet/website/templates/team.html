@@ -4,7 +4,7 @@
             <h1>Team</h1>
             <div class="jumbotron" style="border-radius: 0">
               <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications.</h2>
-              <hr>
+              <hr class="featurette-divider">
               {% for profile in profiles %}
               <div class="row">
                 <div class="col-md-12">
@@ -15,7 +15,7 @@
                   </div>
                 </div>
               </div>
-              {% if not forloop.last %}<hr>{% endif %}
+              {% if not forloop.last %}<hr class="featurette-divider">{% endif %}
               {% endfor %}
             </div>
 {% endblock %}
