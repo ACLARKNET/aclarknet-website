@@ -7,6 +7,7 @@ class ContactForm(forms.Form):
         label='Your email address',
         widget=forms.EmailInput(attrs={'class': 'email'}))
     message = forms.CharField(
-        label='How can we help',
+        label='How can we help?',
         widget=forms.Textarea(attrs={'class': 'message'}))
-    captcha = ReCaptchaField()
+    captcha = ReCaptchaField(
+        label='Are you human?')
