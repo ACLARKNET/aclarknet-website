@@ -1,6 +1,7 @@
 dj-database-url==0.3.0
 Django==1.10.4
 django-crispy-forms==1.6.0
+django-recaptcha
 django-solo==1.1.1
 gunicorn==19.4.5
 Pillow==3.4.2

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aclarknet.website',
+    'captcha',
     'crispy_forms',
 ]
 
@@ -131,3 +132,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD')
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Alex Clark <aclark@aclark.net>'
 MANAGERS = ('aclark@aclark.net', )
+
+# Recaptcha
+RECAPTCHA_PUBLIC_KEY='6LdoKcYSAAAAAFcnVKiKAYkg71mfnRdxA404ZJUu'
+RECAPTCHA_PRIVATE_KEY=os.environ.get('RECAPTCHA_SECRET', '')

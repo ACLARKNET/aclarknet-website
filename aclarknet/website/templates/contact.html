@@ -8,7 +8,6 @@
               {% if messages %}{% for message in messages %}<div {% if message.tags %}class="alert alert-{{ message.tags }}"{% endif %} role="alert">{{ message }}</div>{% endfor %}{% endif %}
               <form action="" method="post">{% csrf_token %}
               {{ form|crispy }}
-              <div class="g-recaptcha" data-sitekey="6LdoKcYSAAAAAFcnVKiKAYkg71mfnRdxA404ZJUu"></div>
               <button class="btn btn-lg btn-success" type="submit">Send Message</button>
               </form>
             </div>

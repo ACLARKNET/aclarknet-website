@@ -1,4 +1,5 @@
 from django import forms
+from captcha.fields import ReCaptchaField
 
 
 class ContactForm(forms.Form):
@@ -8,3 +9,4 @@ class ContactForm(forms.Form):
     message = forms.CharField(
         label='How can we help',
         widget=forms.Textarea(attrs={'class': 'message'}))
+    captcha = ReCaptchaField()
