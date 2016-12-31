@@ -2,7 +2,9 @@
 {% block content %}
             <h1>Testimonials</h1>
             <div class="jumbotron" style="border-radius: 0">
-            {% for testimonial in testimonials %}
+              <h2>Our clients have provided the following solicited and unsolicited feedback about our services, performance and qualifications.</h2>
+              <hr class="featurette-divider"> 
+              {% for testimonial in testimonials %}
               <div class="row">
                 <div class="col-md-12 bg-inverse rounded">
                   <h4 class="pull-right text-white" style="margin-top: 0.3em"><i class="fa fa-calendar"></i> {{ testimonial.issue_date }}</h4>
@@ -15,6 +17,6 @@
                 </div>
               </div>
               {% if not forloop.last %}<hr class="featurette-divider">{% endif %}
-            {% endfor %}
+              {% endfor %}
             </div>
 {% endblock %}
