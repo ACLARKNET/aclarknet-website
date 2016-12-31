@@ -28,6 +28,11 @@ def page(request, slug=None):
     return render(request, 'page.html', context)
 
 
+def blog(request):
+    context = {}
+    return render(request, 'blog.html', context)
+
+
 def book(request):
     context = {}
     return render(request, 'book.html', context)
