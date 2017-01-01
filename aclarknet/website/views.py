@@ -64,7 +64,7 @@ def contact(request):
             send_mail(subject, message, sender, recipients)
             messages.add_message(
                 request, messages.INFO,
-                'Thank you! Please expect our reply within 24 hours.')
+                'Thank you! Please expect a reply within 24 hours.')
             return HttpResponseRedirect(reverse('contact'))
     else:
         form = ContactForm()
