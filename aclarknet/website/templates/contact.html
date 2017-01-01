@@ -3,7 +3,7 @@
 {% block content %}
             <h1>Contact</h1>
             <div class="jumbotron" style="border-radius: 0">
-              {% if messages %}{% for message in messages %}<div {% if message.tags %}class="alert alert-{{ message.tags }}"{% endif %} role="alert">{{ message }}</div>{% endfor %}{% endif %}
+              {% if messages %}{% for message in messages %}<div {% if message.tags %}class="alert alert-{{ message.tags }}"{% endif %} role="alert">{{ message|safe }}</div>{% endfor %}{% endif %}
               <h2>Please contact us to schedule a time to discuss your needs. We look forward to working with you.</h2>
               <hr style="margin: 3em 0 3em 0">
               <form action="" method="post">{% csrf_token %}
