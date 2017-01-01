@@ -53,6 +53,7 @@ def community(request):
 def contact(request):
     context = {}
     now = timezone.datetime.now
+    msg = '<strong>Thank you!</strong> Please expect a reply within 24 hours.'
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -62,9 +63,7 @@ def contact(request):
             subject = settings.DEFAULT_SUBJECT % now().strftime(
                 '%m/%d/%Y %H:%M:%S')
             send_mail(subject, message, sender, recipients)
-            messages.add_message(
-                request, messages.INFO,
-                '<strong>Thank you!</strong> Please expect a reply within 24 hours.')
+            messages.add_message(request, messages.INFO, msg)
             return HttpResponseRedirect(reverse('contact'))
     else:
         form = ContactForm()
