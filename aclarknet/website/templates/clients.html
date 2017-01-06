@@ -2,7 +2,7 @@
 {% block content %}
             <h1>Clients</h1>
             <div class="jumbotron" style="border-radius: 0">
-              <h2>A partial list of our valued clients</h2>
+              <h2>A partial list of our valued clients. <a href="{% url 'contact' %}">Join them today</a>.</h2>
               <hr class="featurette-divider">
               {% for client in clients %}
               <div class="row">
