@@ -67,14 +67,17 @@
     <div class="jumbotron" style="border-radius: 0">
 
       <div class="row featurette">
-        <div class="col-md-7" style="text-align: center">
-          <h2 class="featurette-heading">Testimonials</h2>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Projects</h2>
+          <p class="lead"><i class="fa fa-cog fa-5x pull-left"></i> From <a href="https://www.djangoproject.com/">Django</a> to <a href="https://en.wikipedia.org/wiki/Zope">Zope</a>, to <a href="https://plone.com">Plone</a> and <a href="https://trypyramid.com/">Pyramid</a> in between; if you are using one of these Python-based web frameworks, we want to work with you. Or if not, we can offer compelling reasons to try.</p>
+          <a class="btn btn-lg btn-primary" href="{% url 'projects' %}" role="button">View projects</a>
         </div>
         <div class="col-md-5">
           {% if testimonial %}
           <div class="card" style="border-radius: 0">
-            <h3 class="card-header"><i class="fa fa-calendar"></i> {{ testimonial.issue_date }}</h3>
-            <div class="card-block" style="text-align: center">
+            <h2 class="card-header">Testimonials</h2>
+            <div class="card-block"> 
+              <h3 class="card-title"><i class="fa fa-calendar"></i> {{ testimonial.issue_date }}</h3>
               <p class="card-text"><i class="fa fa-quote-left"></i> {{ testimonial.description }} <i class="fa fa-quote-right"></i></p>
               <h4 class="card-title">&mdash;{{ testimonial.name }}</h4>
               <hr class="featurette-divider">
@@ -84,25 +87,5 @@
           {% endif %}
         </div>
       </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 push-md-5" style="text-align: center">
-          <h2 class="featurette-heading">Projects</h2>
-        </div>
-        <div class="col-md-5 pull-md-7">
-          <div class="card" style="border-radius: 0">
-            <div class="card-block"> 
-              <p class="card-text"><i class="fa fa-cog fa-5x pull-left"></i> From <a href="https://www.djangoproject.com/">Django</a> to <a href="https://en.wikipedia.org/wiki/Zope">Zope</a>, to <a href="https://plone.com">Plone</a> and <a href="https://trypyramid.com/">Pyramid</a> in between; if you are using one of these Python-based web frameworks, we want to work with you. Or if not, we can offer compelling reasons to try.</p> 
-              <hr class="featurette-divider">
-              <div style="text-align: center">
-                <a class="btn btn-lg btn-primary" href="{% url 'projects' %}" role="button">View projects</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
 {% endblock %}
