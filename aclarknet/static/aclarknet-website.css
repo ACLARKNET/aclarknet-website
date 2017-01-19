@@ -21,3 +21,6 @@
     background: rgba(0, 0, 0, 0.7);
     padding: 10px;
 }
+.jumbotron {
+    opacity: 0.9;
+}
