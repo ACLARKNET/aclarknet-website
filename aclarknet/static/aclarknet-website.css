@@ -24,3 +24,6 @@
 .jumbotron {
     opacity: 0.9;
 }
+#sitemap ul {
+    list-style-type: none;
+}
