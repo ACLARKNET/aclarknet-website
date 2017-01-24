@@ -16,11 +16,6 @@
 .marketing {
     margin-top: 1em;
 }
-.text-over-image {  /* https://css-tricks.com/text-blocks-over-image/ */
-    background: rgb(0, 0, 0); /* fallback color */
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-}
 .jumbotron {
     opacity: 0.9;
 }
