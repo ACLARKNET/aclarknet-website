@@ -22,7 +22,10 @@
 #sitemap ul {
     list-style-type: none;
 }
-@media(max-width:575px){
+@media(max-width:575px) {
+    html body div#myCarousel.carousel.slide div.carousel-inner div.carousel-item div.container {
+        margin-left: 1em;
+    }
     .carousel-caption {
         right: auto;
     }
