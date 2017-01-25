@@ -13,7 +13,6 @@
                   <p class="lead">{{ profile.bio|safe|default:'' }}</p>
                 </div>
               </div>
-              {% if not forloop.last %}<hr class="featurette-divider">{% endif %}
               {% endfor %}
             </div>
 {% endblock %}
