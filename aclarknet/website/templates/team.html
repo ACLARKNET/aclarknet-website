@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block content %}
             <h1>Team</h1>
-            <div class="jumbotron" style="border-radius: 0">
+            <div>
               <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications.</h2>
               {% for profile in profiles %}
               <hr class="featurette-divider" id="{{profile.get_username }}">

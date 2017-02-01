@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
             <h1>Testimonials</h1>
-            <div class="jumbotron" style="border-radius: 0">
+            <div>
               <h2>Feedback from our clients about using our services.</h2>
               {% for testimonial in testimonials %}
               <hr class="featurette-divider" id="{{ testimonial.slug }}">
