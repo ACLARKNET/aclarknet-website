@@ -83,26 +83,25 @@ ablog-serve:
 	bin/ablog serve
 
 # Django
-db: django-wipe-db django-init-db
-django: django-wipe django-install django-init django-migrate django-su django-serve  # Chain
-django-wipe: django-wipe-db django-wipe-proj  # Chain
-django-wipe-db: django-wipe-sql  # Alias
-django-init: django-init-db django-init-proj  # Chain
-django-init-db: django-init-sql  # Alias
-django-wipe-pg:  # PostgreSQL
+db: django-db-wipe django-db-wipe
+django: django-dp-wipe django-proj-wipe django-install django-init django-migrate django-su django-serve  # Chain
+django-db-wipe: django-sql-wipe  # Alias
+django-init: django-db-init django-proj-init  # Chain
+django-db-init: django-sql-init  # Alias
+django-pg-wipe:  # PostgreSQL
 	-dropdb $(PROJECT)
-django-wipe-proj:
+django-proj-wipe:
 	@-rm -rvf $(PROJECT)
 	@-rm -v manage.py
-django-wipe-sql:  # SQLite
+django-sql-wipe:  # SQLite
 	-rm db.sqlite3
-django-init-pg:  # PostgreSQL
+django-pg-init:  # PostgreSQL
 	-createdb $(PROJECT)
-django-init-proj:
+django-proj-init:
 	-mkdir -p $(PROJECT)/$(APP)
 	-django-admin startproject $(PROJECT) .
 	-django-admin startapp $(APP) $(PROJECT)/$(APP)
-django-init-sql:  # SQLite
+django-sql-init:  # SQLite
 	-touch db.sqlite3
 django-install:
 	@echo "Django\n" > requirements.txt
@@ -136,10 +135,11 @@ REMOTES=`\
 	grep -v master`  # http://unix.stackexchange.com/a/37316
 co: git-checkout-remotes  # Alias
 commit: git-commit  # Alias
-commit-auto: git-commit-auto  # Alias
-commit-edit: git-commit-edit  # Alias
+commit-auto: git-commit-auto-push  # Alias
+commit-edit: git-commit-edit-push  # Alias
 git-commit: git-commit-auto  # Alias
 git-commit-auto-push: git-commit-auto git-push  # Chain
+git-commit-edit-push: git-commit-edit git-push  # Chain
 push: git-push
 git-checkout-remotes:
 	-for i in $(REMOTES) ; do \
@@ -181,6 +181,8 @@ heroku-debug-on:
 	heroku config:set DEBUG=1
 heroku-debug-off:
 	heroku config:unset DEBUG
+heroku-django-migrate:
+	heroku run python manage.py migrate
 heroku-init:
 	heroku apps:create $(PROJECT)-$(APP)	
 heroku-maint-on:
@@ -248,7 +250,7 @@ python-flake:
 	-flake8 $(PROJECT)/$(APP)/*.py
 python-install:
 	bin/pip install -r requirements.txt
-python-lint: python-flake python-yapf python-wc  # Chain
+python-lint: python-yapf python-flake python-wc  # Chain
 python-serve:
 	@echo "\n\tServing HTTP on http://0.0.0.0:8000\n"
 	bin/python -m SimpleHTTPServer
