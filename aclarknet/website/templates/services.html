@@ -11,7 +11,7 @@
                       <p class="lead"><i class="fa fa-{{ service.icon }} fa-5x pull-left"></i>{{ service.description|safe|linebreaks }}</p>
                   </div>
               </div>
-              {% if not forloop.last %}<hr>{% endif %}
+              {% if not forloop.last %}<hr class="featurette-divider">{% endif %}
               {% endfor %}
             </div>
 {% endblock %}
