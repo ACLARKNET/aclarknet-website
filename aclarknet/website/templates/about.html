@@ -6,27 +6,38 @@
 {% endblock %}
 {% block content %}
             <h1>About</h1>
+
+Team
+Clients
+Testimonial
+Community Outreach
+History
+Location
+Blog
+Book
+Open Source
+
             <div> 
               <div class="row" id="sitemap">
                 <div class="col-md-4">
                   <ul>
-                    <li class="lead"><i class="fa fa-bullhorn"></i> <a href="{% url 'blog' %}">Blog</a></li>
-                    <li class="lead"><i class="fa fa-book"></i> <a href="{% url 'book' %}">Book</a></li>
+                    <li class="lead"><i class="fa fa-users"></i> <a href="{% url 'team' %}">Team</a></li>
                     <li class="lead"><i class="fa fa-building"></i> <a href="{% url 'clients' %}">Clients</a></li>
+                    <li class="lead"><i class="fa fa-thumbs-o-up"></i> <a href="{% url 'testimonials' %}">Testimonials</a></li>
                   </ul>
                 </div>
                 <div class="col-md-4">
                   <ul>
-                    <li class="lead"><i class="fa fa-globe"></i> <a href="{% url 'community' %}">Community</a></li>
+                    <li class="lead"><i class="fa fa-globe"></i> <a href="{% url 'community' %}">Community Outreach</a></li>
                     <li class="lead"><i class="fa fa-clock-o"></i> <a href="{% url 'history' %}">History</a></li>
                     <li class="lead"><i class="fa fa-location-arrow"></i> <a href="{% url 'location' %}">Location</a></li>
                   </ul>
                 </div>
                 <div class="col-md-4">
                   <ul>
+                    <li class="lead"><i class="fa fa-bullhorn"></i> <a href="{% url 'blog' %}">Blog</a></li>
+                    <li class="lead"><i class="fa fa-book"></i> <a href="{% url 'book' %}">Book</a></li>
                     <li class="lead"><i class="fa fa-code"></i> <a href="{% url 'open-source' %}">Open Source</a></li>
-                    <li class="lead"><i class="fa fa-users"></i> <a href="{% url 'team' %}">Team</a></li>
-                    <li class="lead"><i class="fa fa-thumbs-o-up"></i> <a href="{% url 'testimonials' %}">Testimonials</a></li>
                   </ul>
                 </div>
               </div>

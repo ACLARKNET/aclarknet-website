@@ -1,21 +1,24 @@
 .logo-django {
     margin: 0 1em 0 0;
-    width: 320px;
+    width: 300px;
 }
 .logo-plone {
-    margin: 0 0 0 1em;
-    width: 320px;
+    margin: 0 1em 0 0;
+    width: 300px;
 }
 .logo-pyramid {
     margin: 0 1em 0 0;
-    width: 320px;
+    width: 300px;
 }
 .logo-zope {
-    margin: 0 0 0 1em;
-    width: 320px;
+    margin: 0 1em 0 0;
+    width: 300px;
 }
 .marketing {
     margin-top: 2em;
+}
+.nav-link {
+    color: white !important;
 }
 .testimonial {
     margin-top: 8em;
