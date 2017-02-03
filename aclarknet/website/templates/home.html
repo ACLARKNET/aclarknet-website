@@ -54,20 +54,17 @@
 {% block content %}
       <div class="row">
         <div class="col-lg-4">
-          <h1><i class="fa fa-building fa-4x"></i></h1>
-          <h2>Clients</h2>
+          <h1>Clients</h1>
           <p>From Amtrak to USAID and NASA and National Geographic in between, we've helped great companies to great things and we look forward to helping you.
           <p><a class="btn btn-secondary" href="{% url 'clients' %}" role="button">View clients &raquo;</a></p>
         </div>
         <div class="col-lg-4">
-          <h1><i class="fa fa-cog fa-4x"></i></h1>
-          <h2>Projects</h2>
+          <h1>Projects</h1>
           <p>From Django to Zope, to Plone and Pyramid in between; if you are using one of these Python-based web frameworks, we want to work with you. Or if not, we can offer compelling reasons to try.</p>
           <p><a class="btn btn-secondary" href="{% url 'projects' %}" role="button">View projects &raquo;</a></p>
         </div>
         <div class="col-lg-4">
-          <h1><i class="fa fa-bullhorn fa-4x"></i></h1>
-          <h2>Testimonials</h2>
+          <h1>Testimonials</h1>
           <p>{{ testimonial.issue_date }}</p>
           <p>{{ testimonial.description }}</p>
           <p>{{ testimonial.name }}</p>
