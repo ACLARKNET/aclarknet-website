@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
-{% block content %}
+{% block carousel-text %}
             <h1>Testimonials</h1>
+            <h2>Feedback from our clients about our services.</h2>
+{% endblock %}
+{% block content %}
             <div>
-              <h2>Feedback from our clients about our services.</h2>
               {% for testimonial in testimonials %}
               <hr class="featurette-divider" id="{{ testimonial.slug }}">
               <div class="row">

@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
-{% block content %}
+{% block carousel-text %}
             <h1>Clients</h1>
+            <h2>A partial list of our valued clients. <a href="{% url 'contact' %}">Join them</a> today.</h2>
+{% endblock %}
+{% block content %}
             <div>
-              <h2>A partial list of our valued clients. <a href="{% url 'contact' %}">Join them</a> today.</h2>
-              <hr class="featurette-divider">
               {% for client in clients %}
               <div class="row">
                 <div class="col-md-12">

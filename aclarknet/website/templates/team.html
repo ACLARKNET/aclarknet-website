@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block content %}
+{% block carousel-text %}
             <h1>Team</h1>
+            <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications.</h2>
+{% endblock %}
+{% block content %}
             <div>
-              <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications.</h2>
               {% for profile in profiles %}
               <hr class="featurette-divider" id="{{profile.get_username }}">
               <div class="row">

@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
-{% block content %}
+{% block carousel-text %}
             <h1>Contact</h1>
+{% endblock %}
+{% block content %}
             <div>
               {% if messages %}{% for message in messages %}<div {% if message.tags %}class="alert alert-{{ message.tags }}"{% endif %} role="alert">{{ message|safe }}</div>{% endfor %}{% endif %}
               <h2>Please contact us to schedule a time to discuss your needs. We look forward to working with you.</h2>
