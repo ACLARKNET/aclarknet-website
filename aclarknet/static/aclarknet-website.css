@@ -21,8 +21,6 @@
     color: white !important;
 }
 a.nav-link:hover {
-    text-decoration: underline;
-    text-decoration-style: double;
 }
 .testimonial {
     margin-top: 8em;
