@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 {% block carousel-text %}
             <h1>Testimonials</h1>
-            <h2>Feedback from our clients about our services.</h2>
+            <p class="d-none d-md-block">Feedback from our clients about our services.</p>
 {% endblock %}
 {% block content %}
             <div>
               {% for testimonial in testimonials %}
-              <hr class="featurette-divider" id="{{ testimonial.slug }}">
-              <div class="row">
+              <div class="row" id="{{ testimonial.slug }}">
                 <div class="col-md-12 bg-inverse rounded">
                   <h4 class="float-right text-white" style="margin-top: 0.3em"><i class="fa fa-calendar"></i> {{ testimonial.issue_date }}</h4>
                 </div>

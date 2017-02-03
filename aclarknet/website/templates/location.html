@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% block carousel-image %}
+          <img class="first-slide" src="{% static 'bethesda-fountain.jpg' %}" alt="First slide"> 
+{% endblock %}
 {% block carousel-text %}
             <h1>Location</h1>
-            <h2>Bethesda, Maryland, USA</h2>
+            <p class="d-none d-md-block">Bethesda, Maryland, USA</p>
 {% endblock %}
 {% block content %}
             <div>
               <div class="row">
                 <div class="col-md-12" style="text-align: center">
-                  <img class="img-thumbnail" src="{% static 'bethesda-fountain.jpg' %}">
                   <p>Photo by <a href="https://flic.kr/p/72skT5">Edward Johnson</a></p>
-                  <hr class="featurette-divider">
-                  <p class="lead">We are located in Bethesda, Maryland, USA, a suburb of Washington, DC, USA. We service a global community of individuals and organizations and are always eager and available to help.</p>
+                  <p class="lead">We are located in Bethesda, Maryland, USA, a suburb of Washington, DC, USA. We service a global community of individuals and organizations and are always eager and <a href="{% url 'contact' %}">available to help</a>.</p>
                 </div>
               </div>
             </div>
