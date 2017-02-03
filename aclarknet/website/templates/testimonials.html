@@ -4,9 +4,9 @@
             <p class="d-none d-md-block">Feedback from our clients about our services.</p>
 {% endblock %}
 {% block content %}
-            <div>
+            <div> 
               {% for testimonial in testimonials %}
-              <div class="row" id="{{ testimonial.slug }}">
+              <div class="row testimonial" id="{{ testimonial.slug }}">
                 <div class="col-md-12 bg-inverse rounded">
                   <h4 class="float-right text-white" style="margin-top: 0.3em"><i class="fa fa-calendar"></i> {{ testimonial.issue_date }}</h4>
                 </div>
