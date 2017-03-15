@@ -9,3 +9,49 @@ Heroku
 ::
 
     https://git.heroku.com/aclarknet-website.git
+
+
+NGINX
+-----
+
+/etc/nginx/sites-enabled/website
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+    server {
+        listen 443 ssl default_server;
+        listen [::]:443 ssl default_server;
+
+        ssl    on;
+        ssl_certificate    /etc/letsencrypt/live/www2.aclark.net/fullchain.pem;
+        ssl_certificate_key    /etc/letsencrypt/live/www2.aclark.net/privkey.pem;
+
+        root /var/www/html;
+
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name www2.aclark.net;
+
+        location / {
+            proxy_pass http://127.0.0.1:8000;
+            proxy_set_header Host      $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+    }
+
+    server {
+        listen 80;
+        listen [::]:80;
+
+        server_name _;
+
+        root /var/www/example.com;
+        index index.html;
+
+        location / {
+            try_files $uri $uri/ =404;
+        }
+
+        return 301 https://$host$request_uri;
+    }
