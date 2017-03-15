@@ -2,104 +2,64 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="{% static 'favicon.ico' %}"> 
-
-    <title>ACLARK.NET, LLC</title>
-
-    <!-- Bootstrap core CSS -->
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <title>ACLARK.NET, LLC — DB</title>
+    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css">
     <!-- Custom styles for this template -->
-    <link href="{% static 'carousel.css' %}" rel="stylesheet">
-
-    <!-- Custom styles for ACLARK.NET -->
-    <link href="{% static 'aclarknet-website.css' %}" rel="stylesheet"> 
-
-    <!-- FA -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'aclarknet-website.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+    <style>
+        body {
+            background: url({% static 'aclark-doe.jpg' %});
+        }
+    </style>
   </head>
   <body>
-
-    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="{% url 'home' %}">ACLARK.NET, LLC</a>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'projects' %}">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'services' %}">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'about' %}">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-{% block carousel %}
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000"> 
-      <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
-{% block carousel-image %}
-          <img class="first-slide" src="{% static 'aclarknet-website-slide1.jpg' %}" alt="First slide"> 
+{% include 'nav.html' %}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            {% block sidebar %}
+            {% endblock %}
+          </ul>
+        </div>
+        <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 main" id="content">
+{% if show_search %}{% include 'search.html' %}{% endif %}
+{% include 'messages.html' %}
+{% block content %}
 {% endblock %}
-          <div class="container">
-            <div class="carousel-caption d-md-block text-left">
-{% block carousel-text %}
-              <h1>Successfully building web applications since 2004.</h1>
-              <p class="d-none d-md-block">Create professional web applications for your business infrastructure and services efficiently, effectively and economically. We develop, deploy, maintain and support Python-based web applications with an unparalleled level of expertise and dedication.</p>
-{% endblock %}
-            </div>
-          </div>
         </div>
       </div>
     </div>
-{% endblock %}
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- START THE FEATURETTES -->
-
-{% block content %}
-{% endblock %}
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-      <!-- FOOTER -->
-      <footer> 
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; ACLARK.NET LLC 2004 &mdash; 2017. All rights reserved.</p> 
-        <p class="float-right"><a href="https://github.com/ACLARKNET/aclarknet-website"><i class="fa fa-github fa-2x"></i></a> <a href="https://github.com/ACLARKNET/aclarknet-website"></i></a></p>
-        <p>Python&trade; is a registered trademark of the <a href="https://www.python.org/psf-landing/">Python Software Foundation</a>. All other trademarks mentioned on this website are the property of their respective owners. Icons by <a href="http://fontawesome.io/">Font Awesome</a>. Photos by <a href="{% url 'team' %}#aclark">Alex Clark</a> except where otherwise noted. Theme made with <a href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>, of course.</p>
-      </footer>
-
-    </div><!-- /.container -->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="{% static 'aclarknet-database.js' %}"></script>
+
+    <!-- Bootstrap Table -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
+
+    <!-- Bootstrap Datepicker -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Node modules -->
+    <script src="{% static 'node_modules/holderjs/holder.min.js' %}"></script>
+
   </body>
 </html>

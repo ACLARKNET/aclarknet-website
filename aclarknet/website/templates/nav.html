@@ -1,0 +1,21 @@
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'home' %}"><i class="fa fa-home"></i></a>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">  <!-- http://stackoverflow.com/a/25044880/185820 -->
+{% include 'dropdown.html' %}
+          {% if request.user.is_staff %}<li class="nav-item {% if active_nav == 'client' %}active{% endif %}"><a class="nav-link" href="{% url 'client_index' %}">Clients</a></li>{% endif %}
+          {% if request.user.is_staff %}<li class="nav-item {% if active_nav == 'contact' %}active{% endif %}"><a class="nav-link" href="{% url 'contact_index' %}">Contacts</a></li>{% endif %}
+          {% if request.user.is_staff %}<li class="nav-item {% if active_nav == 'estimate' %}active{% endif %}"><a class="nav-link" href="{% url 'estimate_index' %}">Estimates</a></li>{% endif %}
+          {% if request.user.is_staff %}<li class="nav-item {% if active_nav == 'invoice' %}active{% endif %}"><a class="nav-link" href="{% url 'invoice_index' %}">Invoices</a></li>{% endif %}
+          {% if request.user.is_staff %}<li class="nav-item {% if active_nav == 'note' %}active{% endif %}"><a class="nav-link" href="{% url 'note_index' %}">Notes</a></li>{% endif %}
+          {% if request.user.is_staff %}<li class="nav-item {% if active_nav == 'project' %}active{% endif %}"><a class="nav-link" href="{% url 'project_index' %}">Projects</a></li>{% endif %}
+          {% if request.user.is_staff %}<li class="nav-item {% if active_nav == 'report' %}active{% endif %}"><a class="nav-link" href="{% url 'report_index' %}">Reports</a></li>{% endif %}
+          {% if request.user.is_staff %}<li class="nav-item {% if active_nav == 'task' %}active{% endif %}"><a class="nav-link" href="{% url 'task_index' %}">Tasks</a></li>{% endif %}
+          {% if request.user.is_staff %}<li class="nav-item {% if active_nav == 'time' %}active{% endif %}"><a class="nav-link" href="{% url 'entry_index' %}">Times</a></li>{% endif %}
+          {% if request.user.is_staff %}<li class="nav-item {% if active_nav == 'user' %}active{% endif %}"><a class="nav-link" href="{% url 'user_index' %}">Users</a></li>{% endif %}
+        </ul>
+      </div>
+    </nav>
