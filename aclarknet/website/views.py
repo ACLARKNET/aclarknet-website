@@ -20,6 +20,7 @@ PROFILE_URL = '%s/api/profiles/?format=json' % BASE_URL
 
 def about(request):
     context = {}
+    context['active_nav'] = 'about'
     return render(request, 'about.html', context)
 
 
