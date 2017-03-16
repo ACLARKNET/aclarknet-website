@@ -330,13 +330,14 @@ vagrant-update:
 	vagrant box update
 
 # ACLARK website
+.DEFAULT_GOAL=deploy
 APP=website
 PROJECT=aclarknet
 heroku-remote:
 	git remote add heroku https://git.heroku.com/aclarknet-website.git
 heroku-remote2:
 	git remote add heroku https://git.heroku.com/aclarknet-website2.git
-pull:
+deploy:
+	@$(MAKE) git-commit-auto-push
 	ssh db "cd /srv/aclarknet-website; git pull"
 	ssh db "sudo systemctl restart www2.socket"
-
