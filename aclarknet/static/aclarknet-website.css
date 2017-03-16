@@ -1,6 +1,7 @@
 #content {
     background: white;
     padding-bottom: 15px;
+    padding-top: 52px;
 }
 #project-invoices li:before {
     font-family: 'FontAwesome';

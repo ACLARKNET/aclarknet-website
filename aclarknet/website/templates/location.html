@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block carousel-image %}
-          <img class="first-slide" src="{% static 'bethesda-fountain.jpg' %}" alt="First slide"> 
-{% endblock %}
-{% block carousel-text %}
-            <h1>Location</h1>
-            <p class="d-none d-md-block">Bethesda, Maryland, USA</p>
-{% endblock %}
 {% block content %}
+            <h1>Location</h1>
+            <div class="row">
+              <div class="col-md-9">
+                <img width="100%" src="{% static 'bethesda-fountain.jpg' %}">
+              </div>
+            </div>
+            <p class="d-none d-md-block">Bethesda, Maryland, USA</p>
             <div>
               <div class="row">
                 <div class="col-md-12" style="text-align: center">
