@@ -31,11 +31,13 @@ def page(request, slug=None):
 
 def blog(request):
     context = {}
+    context['active_nav'] = 'blog'
     return render(request, 'blog.html', context)
 
 
 def book(request):
     context = {}
+    context['active_nav'] = 'book'
     return render(request, 'book.html', context)
 
 
@@ -43,11 +45,13 @@ def clients(request):
     context = {}
     clients = requests.get(CLIENT_URL).json()
     context['clients'] = clients
+    context['active_nav'] = 'clients'
     return render(request, 'clients.html', context)
 
 
 def community(request):
     context = {}
+    context['active_nav'] = 'community'
     return render(request, 'community.html', context)
 
 
@@ -69,11 +73,13 @@ def contact(request):
     else:
         form = ContactForm()
     context['form'] = form
+    context['active_nav'] = 'contact'
     return render(request, 'contact.html', context)
 
 
 def history(request):
     context = {}
+    context['active_nav'] = 'history'
     return render(request, 'history.html', context)
 
 
