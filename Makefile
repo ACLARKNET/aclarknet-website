@@ -338,5 +338,5 @@ heroku-remote2:
 	git remote add heroku https://git.heroku.com/aclarknet-website2.git
 pull:
 	ssh db "cd /srv/aclarknet-website; git pull"
-	ssh db "sudo systemctl restart www2"
+	ssh db "sudo systemctl restart www2.socket"
 
