@@ -1,5 +1,5 @@
 dj-database-url==0.3.0
-Django==1.10.5
+Django==1.10.6
 django-crispy-forms==1.6.0
 django-recaptcha
 django-solo==1.1.1
