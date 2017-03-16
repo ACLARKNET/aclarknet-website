@@ -336,3 +336,5 @@ heroku-remote:
 	git remote add heroku https://git.heroku.com/aclarknet-website.git
 heroku-remote2:
 	git remote add heroku https://git.heroku.com/aclarknet-website2.git
+pull:
+	ssh db cd /srv/aclarknet-website; git pull
