@@ -340,5 +340,6 @@ heroku-remote2:
 deploy:
 	@$(MAKE) git-commit-auto-push
 	ssh db "cd /srv/aclarknet-website; git pull"
+	ssh db "cd /srv/aclarknet-website; make install"
 	ssh db "cd /srv/aclarknet-website; make django-static"
 	ssh db "sudo systemctl restart www2.socket"
