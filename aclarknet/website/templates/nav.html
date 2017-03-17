@@ -5,19 +5,11 @@
       <a class="navbar-brand" href="{% url 'home' %}">ACLARK.NET, LLC</a>
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">  <!-- http://stackoverflow.com/a/25044880/185820 -->
-          <li class="nav-item {% if active_nav == 'about' %}active{% endif %}"><a class="nav-link" href="{% url 'about' %}">About</a></li>
-          <li class="nav-item {% if active_nav == 'book' %}active{% endif %}"><a class="nav-link" href="{% url 'book' %}">Book</a></li>
-          <li class="nav-item {% if active_nav == 'blog' %}active{% endif %}"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
-          <li class="nav-item {% if active_nav == 'clients' %}active{% endif %}"><a class="nav-link" href="{% url 'clients' %}">Clients</a></li>
-          <li class="nav-item {% if active_nav == 'community' %}active{% endif %}"><a class="nav-link" href="{% url 'community' %}">Community Outreach</a></li>
-          <li class="nav-item {% if active_nav == 'contact' %}active{% endif %}"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
-          <li class="nav-item {% if active_nav == 'history' %}active{% endif %}"><a class="nav-link" href="{% url 'history' %}">History</a></li>
-          <li class="nav-item {% if active_nav == 'location' %}active{% endif %}"><a class="nav-link" href="{% url 'location' %}">Location</a></li>
-          <li class="nav-item {% if active_nav == 'open-source' %}active{% endif %}"><a class="nav-link" href="{% url 'open-source' %}">Open Source</a></li>
           <li class="nav-item {% if active_nav == 'projects' %}active{% endif %}"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
-          <li class="nav-item {% if active_nav == 'team' %}active{% endif %}"><a class="nav-link" href="{% url 'team' %}">Team</a></li>
-          <li class="nav-item {% if active_nav == 'testimonials' %}active{% endif %}"><a class="nav-link" href="{% url 'testimonials' %}">Testimonials</a></li>
           <li class="nav-item {% if active_nav == 'services' %}active{% endif %}"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
+          <li class="nav-item {% if active_nav == 'contact' %}active{% endif %}"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+          <li class="nav-item {% if active_nav == 'community' %}active{% endif %}"><a class="nav-link" href="{% url 'community' %}">Community</a></li>
+{% include 'dropdown.html' %}
         </ul>
       </div>
     </nav>
