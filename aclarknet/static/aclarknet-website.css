@@ -115,3 +115,6 @@ img:hover {
 .navbar {
     background: #24261A !important;
 }
+.featurette-divider {
+    margin: 4rem 0 !important;
+}
