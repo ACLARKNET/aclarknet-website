@@ -105,7 +105,7 @@ img:hover {
 #about ul {
     list-style-type: none;
 }
-.logo-django, .local-plone, .logo-zope, .logo-pyramid {
+.logo-django, .logo-plone, .logo-zope, .logo-pyramid {
     margin: 0 2em 2em 0;
     width: 300px;
 }
