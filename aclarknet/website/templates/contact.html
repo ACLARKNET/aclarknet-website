@@ -3,6 +3,7 @@
 {% block content %}
             <h1>Contact</h1>
             <h2>Please contact us to schedule a time to discuss your needs. We look forward to working with you.</h2>
+            <hr class="featurette-divider">
             <div>
               {% if messages %}{% for message in messages %}<div {% if message.tags %}class="alert alert-{{ message.tags }}"{% endif %} role="alert">{{ message|safe }}</div>{% endfor %}{% endif %}
               <form action="" method="post">{% csrf_token %}
