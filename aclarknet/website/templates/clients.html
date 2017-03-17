@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-            <h1>Clients</h1>
-            <h2>A partial list of our valued clients. <a href="{% url 'contact' %}">Join them</a> today</h2>
+            <div class="row jumbotron">
+              <div class="col-md-12">
+                <h1>Clients</h1>
+                <h2>A partial list of our valued clients. <a href="{% url 'contact' %}">Join them</a> today</h2>
+              </div>
+            </div>
             <hr class="featurette-divider">
             <div>
               {% for client in clients %}

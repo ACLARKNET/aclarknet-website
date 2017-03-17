@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-            <h1>Testimonials</h1>
-            <h2>Feedback from our clients</h2>
+            <div class="row jumbotron">
+              <div class="col-md-12">
+                <h1>Testimonials</h1>
+                <h2>Feedback from our clients</h2>
+              </div>
+            </div>
             <hr class="featurette-divider">
             <div> 
               {% for testimonial in testimonials %}

@@ -4,6 +4,9 @@
     padding-bottom: 15px;
     padding-top: 52px;
 }
+.jumbotron {
+    border-radius: 0;
+}
 #project-invoices li:before {
     font-family: 'FontAwesome';
     content: '\f138';
