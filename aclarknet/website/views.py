@@ -102,6 +102,7 @@ def opensource(request):
 
 def projects(request):
     context = {}
+    context['active_nav'] = 'projects'
     return render(request, 'projects.html', context)
 
 
@@ -109,6 +110,7 @@ def services(request):
     context = {}
     services = requests.get(SERVICE_URL).json()
     context['services'] = services
+    context['active_nav'] = 'services'
     return render(request, 'services.html', context)
 
 
@@ -123,6 +125,7 @@ def team(request):
     context = {}
     profiles = requests.get(PROFILE_URL).json()
     context['profiles'] = profiles
+    context['active_nav'] = 'team'
     return render(request, 'team.html', context)
 
 
