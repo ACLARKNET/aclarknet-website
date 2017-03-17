@@ -102,3 +102,6 @@ img:hover {
 .modal-body img:hover {
   cursor: default;
 }
+#about ul {
+    list-style-type: none;
+}
