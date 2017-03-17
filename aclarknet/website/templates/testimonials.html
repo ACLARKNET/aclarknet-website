@@ -18,6 +18,7 @@
                   <h4>&mdash;{{ testimonial.name }}, {{ testimonial.title }}</h4>
                 </div>
               </div>
+              {% if not forloop.last %}<hr class="featurette-divider">{% endif %}
               {% endfor %}
             </div>
 {% endblock %}
