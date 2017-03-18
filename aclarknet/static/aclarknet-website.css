@@ -11,6 +11,9 @@ h1 {
     margin: 0;
     padding: 0;
 }
+.carousel-inner {
+    border-radius: 5px;
+}
 #sitemap ul {
     list-style-type: none;
 }
