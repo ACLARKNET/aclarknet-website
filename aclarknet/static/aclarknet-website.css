@@ -1,5 +1,11 @@
+h1 {
+    border-bottom: none !important;
+}
 .navbar {
     background: #444854 !important;
+}
+.sidebar {
+    background: transparent;
 }
 #myCarousel {
     margin: 0;
