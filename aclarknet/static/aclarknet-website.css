@@ -1,3 +1,15 @@
 .featurette-divider {
     margin: 4rem 0 !important;
 }
+.logo-django {
+    width: 320px;
+}
+.logo-plone {
+    width: 320px;
+}
+.logo-pyramid {
+    width: 320px;
+}
+.logo-zope {
+    width: 320px;
+}
