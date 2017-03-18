@@ -13,6 +13,7 @@
 }
 .jumbotron {
     border-radius: 0;
+    background: transparent;
 }
 .logo-django {
     width: 320px;
