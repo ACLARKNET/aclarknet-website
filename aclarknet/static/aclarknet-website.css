@@ -1,3 +1,9 @@
+.navbar {
+    background: #444854 !important;
+}
+#sitemap ul {
+    list-style-type: none;
+}
 .featurette-divider {
     margin: 4rem 0 !important;
 }
