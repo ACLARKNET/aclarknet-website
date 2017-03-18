@@ -14,6 +14,7 @@
 .jumbotron {
     border-radius: 0;
     background: transparent;
+    text-align: center;
 }
 .logo-django {
     width: 320px;
