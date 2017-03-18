@@ -31,13 +31,13 @@ def page(request, slug=None):
 
 def blog(request):
     context = {}
-    context['active_nav'] = 'blog'
+    context['active_nav'] = 'more'
     return render(request, 'blog.html', context)
 
 
 def book(request):
     context = {}
-    context['active_nav'] = 'book'
+    context['active_nav'] = 'more'
     return render(request, 'book.html', context)
 
 
@@ -79,7 +79,7 @@ def contact(request):
 
 def history(request):
     context = {}
-    context['active_nav'] = 'history'
+    context['active_nav'] = 'more'
     return render(request, 'history.html', context)
 
 
@@ -87,16 +87,19 @@ def home(request):
     context = {}
     testimonials = requests.get(TESTIMONIAL_URL).json()
     context['testimonial'] = random.choice(testimonials)
+    context['active_nav'] = 'more'
     return render(request, 'home.html', context)
 
 
 def location(request):
     context = {}
+    context['active_nav'] = 'more'
     return render(request, 'location.html', context)
 
 
 def opensource(request):
     context = {}
+    context['active_nav'] = 'more'
     return render(request, 'opensource.html', context)
 
 
@@ -118,6 +121,7 @@ def testimonials(request):
     context = {}
     testimonials = requests.get(TESTIMONIAL_URL).json()
     context['testimonials'] = testimonials
+    context['active_nav'] = 'more'
     return render(request, 'testimonials.html', context)
 
 
