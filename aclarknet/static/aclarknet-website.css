@@ -1,11 +1,18 @@
 .navbar {
     background: #444854 !important;
 }
+#myCarousel {
+    margin: 0;
+    padding: 0;
+}
 #sitemap ul {
     list-style-type: none;
 }
 .featurette-divider {
     margin: 4rem 0 !important;
+}
+.jumbotron {
+    border-radius: 0;
 }
 .logo-django {
     width: 320px;
