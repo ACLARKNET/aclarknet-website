@@ -21,8 +21,13 @@
     <link rel="stylesheet" href="{% static 'dashboard.css' %}">
     <link rel="stylesheet" href="{% static 'carousel.css' %}">
     <style>
-      body {
-        background: url({% static 'aclark-doe.jpg' %}) center -200px;
+      body, #content {
+        background:
+            linear-gradient(
+                rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.9)
+            ),
+            url({% static 'aclark-doe.jpg' %}) center -200px;
       }
     </style>
   </head>
@@ -43,7 +48,7 @@
 {% block content %}
 {% endblock %}
         </div>
-        <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 main" style="background: white; opacity: 0.9">
+        <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 main"> 
           <hr class="featurette-divider">
           <footer> 
             <p class="float-right"><a href="#">Back to top</a></p>
