@@ -64,8 +64,8 @@ def contact(request):
         if form.is_valid():
             message = form.cleaned_data['message']
             sender = form.cleaned_data['email']
-            recipients = [settings.DEFAULT_FROM_EMAIL]
-            subject = settings.DEFAULT_SUBJECT % now().strftime(
+            recipients = [settings.EMAIL_FROM]
+            subject = settings.EMAIL_SUBJECT % now().strftime(
                 '%m/%d/%Y %H:%M:%S')
             send_mail(subject, message, sender, recipients)
             messages.add_message(request, messages.INFO, msg)

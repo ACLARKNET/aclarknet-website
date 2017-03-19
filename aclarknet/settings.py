@@ -25,8 +25,7 @@ SECRET_KEY = os.environ.get(
     'SECRET_KEY', 'y03(w7j=@41g#-t4$3a!o8lzjfi&8t$-7$5&2l+h7=qyf-fdk!')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get('DEBUG')
-DEBUG = True
+DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -119,20 +118,12 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
-
-DEFAULT_SUBJECT = 'ACLARK.NET, LLC Website — Contact Form Submission %s'
-
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-# Send mail with sendgrid
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get('SENDGRID_USERNAME')
-EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD')
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Alex Clark <aclark@aclark.net>'
-MANAGERS = ('aclark@aclark.net', )
+# Send mail with AWS SES
+EMAIL_BACKEND = 'django_ses.SESBackend'
+EMAIL_FROM = 'website@aclark.net'
+EMAIL_SUBJECT = 'ACLARK.NET, LLC Website — Contact Form Submission %s'
 
 # Recaptcha
 NOCAPTCHA = True
