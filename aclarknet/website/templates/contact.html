@@ -9,7 +9,7 @@
             </div>
             <hr class="featurette-divider">
             <div>
-              {% if messages %}{% for message in messages %}<div {% if message.tags %}class="alert alert-{{ message.tags }}"{% endif %} role="alert">{{ message|safe }}</div>{% endfor %}{% endif %}
+{% include 'messages.html' %}
               <form action="" method="post">{% csrf_token %}
               {{ form|crispy }}
               <button class="btn btn-lg btn-success" type="submit">Send Message</button>
