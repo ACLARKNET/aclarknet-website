@@ -343,4 +343,4 @@ deploy:
 pull:
 	ssh db "cd /srv/aclarknet-website; git pull"
 	ssh db "cd /srv/aclarknet-website; make django-static"
-	ssh db "sudo systemctl restart www2.socket"
+	ssh db "sudo systemctl restart www.socket"
