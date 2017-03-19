@@ -1,41 +1,33 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
-{% block nav %}
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li class="active"><a href="{% url 'projects' %}">Projects</a></li>
-            <li><a href="{% url 'services' %}">Services</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-{% endblock %}
-
 {% block content %}
-            <h1>Projects</h1>
-            <div class="center jumbotron">
-              <h2>If you are using one of these Python-based web frameworks, we want to work with you:</h2>
-              <br>
-              <div class="row">
-                <img class="logo-django" src="{% static 'django-logo-positive.png' %}">
-                <h4><i class="fa fa-external-link"></i>&nbsp;<a href="https://www.djangoproject.com">https://www.djangoproject.com</a></h4>
+            <div class="row">
+              <div class="col-md-12">
+
+                <h1>Projects</h1>
+                <h2>If you are using one of these Python-based web frameworks, we want to work with you. Or if not, we can offer compelling reasons to try.</h2>
               </div>
-              <hr>
-              <div class="row">
-                <img class="logo-plone" src="{% static 'plone-logo-256.png' %}">
-                <h4><i class="fa fa-external-link"></i>&nbsp;<a href="https://plone.com">https://plone.com</a></h4>
-              </div>
-              <hr>
-              <div class="row">
-                <img src="{% static 'pyramid.png' %}">
-                <h4><i class="fa fa-external-link"></i>&nbsp;<a href="http://www.pylonsproject.org">http://www.pylonsproject.org</a></h4>
-              </div>
-              <hr>
-              <div class="row">
-                <img class="logo-zope" src="{% static 'Zope.png' %}">
-                <h4><i class="fa fa-external-link"></i>&nbsp;<a href="http://zope.org">http://zope.org</a></h4>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="center"><h4>Read about our <a href="{% url 'open-source' %}">open source contributions</a></h4></div>
-              </div>
+            </div>
+            <hr class="featurette-divider">
+            <div>
+              <p class="lead">
+                <a href="https://www.djangoproject.com" target="_blank"><img class="img-thumbnail logo-django float-left" src="{% static 'django-logo-positive.png' %}"></a>
+                <a href="https://www.djangoproject.com" target="_blank">Django</a> is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source. 
+              </p>
+              <hr class="featurette-divider">
+              <p class="lead">
+                <a href="https://plone.com"><img class="img-thumbnail logo-plone float-left" src="{% static 'plone-logo-256.png' %}"></a>
+                <a href="https://plone.com">Plone</a> is a ready-to-run content management system that is built on Python. Plone is easy, flexible, and gives you a system for web content that is ideal for projects, communities, websites and intranets.
+              </p>
+              <hr class="featurette-divider">
+              <p class="lead">
+                <a href="http://www.trypyramid.com"><img class="img-thumbnail logo-pyramid float-left" src="{% static 'pyramid.png' %}"></a>
+                <a href="http://www.trypyramid.com">Pyramid</a> makes it easy to write web applications. You can start small with this "hello world" minimal request/response web app. This may take you far, especially while learning. As your application grows, Pyramid offers many features that make writing complex software take less effort. 
+              </p>
+              <hr class="featurette-divider">
+              <p class="lead">
+                <a href="https://en.wikipedia.org/wiki/Zope"><img class="img-thumbnail logo-zope float-left" src="{% static 'Zope.png' %}"></a>
+                <a href="https://en.wikipedia.org/wiki/Zope">Zope</a> is a community project concerned with a free and open-source, object-oriented web application server written in the Python programming language. Zope stands for "Z Object Publishing Environment", and was the first system using the now common object publishing methodology for the Web. Zope has been recognized as a Python killer app, an application that helped put Python in the spotlight.
+              </p>
             </div>
 {% endblock %}

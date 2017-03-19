@@ -1,29 +1,18 @@
 {% extends 'base.html' %}
-
 {% load crispy_forms_tags %}
-
-{% block nav %}
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'projects' %}">Projects</a></li>
-            <li><a href="{% url 'services' %}">Services</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li class="active"><a href="{% url 'contact' %}">Contact</a></li>
-{% endblock %}
-
 {% block content %}
-            <h1>Contact</h1>
-            <div class="jumbotron">
-              {% if messages %}{% for message in messages %}<div {% if message.tags %}class="alert alert-{{ message.tags }}"{% endif %} role="alert">{{ message }}</div>{% endfor %}{% endif %}
-              <p class="lead">Please contact us to schedule a time to discuss your needs. We look forward to working with you.</p>
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Contact</h1>
+                <h2>Please contact us to schedule a time to discuss your needs. We look forward to working with you.</h2>
+              </div>
+            </div>
+            <hr class="featurette-divider">
+            <div>
+              {% if messages %}{% for message in messages %}<div {% if message.tags %}class="alert alert-{{ message.tags }}"{% endif %} role="alert">{{ message|safe }}</div>{% endfor %}{% endif %}
               <form action="" method="post">{% csrf_token %}
               {{ form|crispy }}
               <button class="btn btn-lg btn-success" type="submit">Send Message</button>
               </form>
             </div>
-            <style>
-              #footer {
-                background: white !important;
-                color: black;
-              }
-            </style>
 {% endblock %}

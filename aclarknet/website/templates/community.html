@@ -1,43 +1,30 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
-{% block nav %}
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'projects' %}">Projects</a></li>
-            <li><a href="{% url 'services' %}">Services</a></li>
-            <li class="active"><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-{% endblock %}
-
 {% block content %}
-            <h1>Community</h1>
-            <div class="jumbotron">
-                <div class="row">
-                    <div class="col-md-8">
-                      <img src="{% static 'dcpython.png' %}">
-                    </div>
-                    <div class="col-md-4">
-                      <p class="lead">In early 2008, we created a 501(c)(3) non-profit organization, <a href="http://dcpython.org">DC Python</a> in Maryland, USA to expand our outreach and service to the Python community in DC.</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-md-6">
-                      <img src="{% static 'ploneconf.png' %}">
-                    </div>
-                    <div class="col-md-6">
-                      <p class="lead">In late 2008, we made one of our most significant contributions to the community by organizing and hosting <a href="http://plone.org/2008">Plone Conference 2008</a> in DC.</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="center"><h4>Read about our <a href="{% url 'history' %}">company history</a></h4></div>
-                </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Community Service</h1>
+                <h2>Our effort to support the Python community.</h2>
+              </div>
             </div>
-            <style>
-              #footer {
-                background: white !important;
-                color: black;
-              }
-            </style>
+            <hr class="featurette-divider">
+            <div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p class="lead">In early 2008, we created a 501(c)(3) non-profit organization, <a href="http://dcpython.org">DC Python</a> in Maryland, USA to expand our outreach and service to the Python community in DC.</p>
+                </div>
+                <div class="col-md-8">
+                  <img class="img-thumbnail" src="{% static 'dcpython.png' %}">
+                </div>
+              </div>
+              <hr class="featurette-divider">
+              <div class="row">
+                <div class="col-md-6">
+                  <img class="img-thumbnail" src="{% static 'ploneconf.png' %}">
+                </div>
+                <div class="col-md-6">
+                  <p class="lead">In late 2008, we made one of our most significant contributions to the community by organizing and hosting <a href="http://old.plone.org/2008">Plone Conference 2008</a> in DC.</p>
+                </div>
+              </div>
+            </div>
 {% endblock %}

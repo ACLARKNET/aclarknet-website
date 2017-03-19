@@ -1,26 +1,22 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
-{% block nav %}
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'projects' %}">Projects</a></li>
-            <li><a href="{% url 'services' %}">Services</a></li>
-            <li class="active"><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-{% endblock %}
-
 {% block content %}
-            <h1>Team</h1>
-            <div class="jumbotron">
-              <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications</h2>
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Team</h1>
+                <h2>Our team offers extensive experience in the development, deployment and maintenance of Python-based web applications.</h2>
+              </div>
+            </div>
+            <div>
               {% for profile in profiles %}
+              <hr class="featurette-divider" id="{{profile.get_username }}">
               <div class="row">
                 <div class="col-md-12">
-                  <h2 id="{{profile.get_username }}"><i class="fa fa-user"></i> {{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
-                  <p class="lead"><img class="img-thumbnail wrap" src="{{ profile.get_avatar_url }}">{{ profile.bio|safe|default:'' }}</p>
+                  <img class="img-thumbnail pull-left" src="{{ profile.get_avatar_url }}" style="margin: 0 1em 1em 0">
+                  <h2>{{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
+                  <p class="lead">{{ profile.bio|safe|default:'' }}</p>
                 </div>
               </div>
-              {% if not forloop.last %}<hr>{% endif %}
               {% endfor %}
             </div>
 {% endblock %}

@@ -1,0 +1,43 @@
+h1 {
+    border-bottom: none !important;
+}
+.navbar {
+    background: #444854 !important;
+}
+.sidebar {
+    background: transparent;
+}
+#myCarousel {
+    margin: 0;
+    padding: 0;
+}
+.carousel-inner {
+    border-radius: 5px;
+}
+#sitemap ul {
+    list-style-type: none;
+}
+.featurette-divider {
+    margin: 3rem 0 !important;
+}
+.jumbotron {
+    border-radius: 0;
+    background: transparent;
+    text-align: center;
+}
+.logo-django {
+    width: 320px;
+    margin: 0 2rem 1rem 0;
+}
+.logo-plone {
+    width: 320px;
+    margin: 0 2rem 1rem 0;
+}
+.logo-pyramid {
+    width: 320px;
+    margin: 0 2rem 1rem 0;
+}
+.logo-zope {
+    width: 320px;
+    margin: 0 2rem 1rem 0;
+}

@@ -1,24 +1,22 @@
 {% extends 'base.html' %}
-
-{% block nav %}
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'projects' %}">Projects</a></li>
-            <li class="active"><a href="{% url 'services' %}">Services</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-{% endblock %}
-
 {% block content %}
-            <h1>Services</h1>
-            <div class="jumbotron">
+            <div class="row">
+              <div class="col-md-12">
+
+                <h1>Services</h1>
+                <h2>We offer a variety of professional technical services including software development, systems administration and more.</h2>
+              </div>
+            </div>
+            <hr class="featurette-divider">
+            <div>
               {% for service in services %}
               <div class="row">
                   <div class="col-md-12">
                       <h2 id="{{ service.name|lower }}">{{ service.name }}</h2>
-                      <p class="lead">{{ service.description|safe|linebreaks }}</p>
+                      <p class="lead"><i class="fa fa-{{ service.icon }} fa-5x pull-left"></i>{{ service.description|safe|linebreaks }}</p>
                   </div>
               </div>
-              {% if not forloop.last %}<hr>{% endif %}
+              {% if not forloop.last %}<hr class="featurette-divider">{% endif %}
               {% endfor %}
             </div>
 {% endblock %}
