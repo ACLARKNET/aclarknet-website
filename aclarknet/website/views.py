@@ -87,7 +87,6 @@ def home(request):
     context = {}
     testimonials = requests.get(TESTIMONIAL_URL).json()
     context['testimonial'] = random.choice(testimonials)
-    context['active_nav'] = 'more'
     return render(request, 'home.html', context)
 
 
