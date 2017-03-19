@@ -68,7 +68,7 @@ def contact(request):
             subject = settings.EMAIL_SUBJECT % now().strftime(
                 '%m/%d/%Y %H:%M:%S')
             send_mail(subject, message, sender, recipients)
-            messages.add_message(request, messages.INFO, msg)
+            messages.add_message(request, messages.SUCCESS, msg)
             return HttpResponseRedirect(reverse('contact'))
     else:
         form = ContactForm()
