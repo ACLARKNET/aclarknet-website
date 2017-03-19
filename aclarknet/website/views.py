@@ -58,7 +58,7 @@ def community(request):
 def contact(request):
     context = {}
     now = timezone.datetime.now
-    msg = 'Mail sent, thank you! Please expect a response within 24 hours.'
+    msg = 'Sent, thank you. Expect our reply within one business day.'
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
