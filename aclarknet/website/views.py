@@ -51,7 +51,7 @@ def clients(request):
 
 def community(request):
     context = {}
-    context['active_nav'] = 'community'
+    context['active_nav'] = 'more'
     return render(request, 'community.html', context)
 
 
