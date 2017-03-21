@@ -120,7 +120,7 @@ def testimonials(request):
     context = {}
     testimonials = requests.get(TESTIMONIAL_URL).json()
     context['testimonials'] = testimonials
-    context['active_nav'] = 'more'
+    context['active_nav'] = 'testimonials'
     return render(request, 'testimonials.html', context)
 
 
