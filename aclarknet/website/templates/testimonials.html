@@ -6,10 +6,10 @@
                 <h2>Feedback from our clients.</h2>
               </div>
             </div>
-            <hr class="featurette-divider">
             <div> 
               {% for testimonial in testimonials %}
-              <div class="row testimonial" id="{{ testimonial.slug }}">
+              <hr class="featurette-divider" id="{{ testimonial.slug }}">
+              <div class="row testimonial">
                 <div class="col-md-12">
                   <h3><i class="fa fa-calendar"></i> {{ testimonial.issue_date }}</h3>
                 </div>
@@ -22,7 +22,6 @@
                   <h3>&mdash;{{ testimonial.name }}, {{ testimonial.title }}</h3>
                 </div>
               </div>
-              {% if not forloop.last %}<hr class="featurette-divider">{% endif %}
               {% endfor %}
             </div>
 {% endblock %}
