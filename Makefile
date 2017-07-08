@@ -344,3 +344,12 @@ pull:
 	ssh db2 "cd /srv/aclarknet-website; git pull"
 	ssh db2 "cd /srv/aclarknet-website; make django-static"
 	ssh db2 "sudo systemctl restart www.socket"
+aclarknet-remote-nginx-symlink:
+	ssh db2 "cd /etc/nginx/sites-enabled"
+	ssh db2 "sudo ln -s /srv/aclarknet-database/nginx/www"
+aclarknet-remote-gunicorn-start:
+	ssh db2 "sudo systemctl start www"
+aclarknet-remote-gunicorn-stop:
+	ssh db2 "sudo systemctl stop www"
+aclarknet-remote-gunicorn-restart:
+	ssh db2 "sudo systemctl restart www"
