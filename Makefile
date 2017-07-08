@@ -342,7 +342,7 @@ aclarknet-remote-static:
 aclarknet-remote-git-pull:
 	ssh db2 "cd /srv/aclarknet-website; git pull"
 aclarknet-remote-status:
-	ssh db2 "sudo systemctl status db.service"
+	ssh db2 "sudo systemctl status www.service"
 aclarknet-remote-nginx-stop:
 	ssh db2 "sudo systemctl stop nginx"
 aclarknet-remote-nginx-start:
@@ -354,12 +354,12 @@ aclarknet-remote-package-update:
 aclarknet-remote-nginx-symlink:
 	ssh db2 "cd /etc/nginx/sites-enabled; sudo ln -s /srv/aclarknet-website/nginx/www"
 aclarknet-remote-gunicorn-start:
-	ssh db2 "sudo systemctl start db"
+	ssh db2 "sudo systemctl start www"
 aclarknet-remote-gunicorn-stop:
-	ssh db2 "sudo systemctl stop db.service"
+	ssh db2 "sudo systemctl stop www.service"
 aclarknet-remote-gunicorn-restart:
 	ssh db2 "sudo systemctl daemon-reload"
-	ssh db2 "sudo systemctl restart db"
+	ssh db2 "sudo systemctl restart www"
 aclarknet-webpack-pack:
 	./node_modules/.bin/webpack --config webpack.config.js
 restart: aclarknet-remote-gunicorn-restart
