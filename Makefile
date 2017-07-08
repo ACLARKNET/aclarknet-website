@@ -338,7 +338,6 @@ deploy:
 	@$(MAKE) pull
 pull:
 	ssh db2 "cd /srv/aclarknet-website; git pull"
-	ssh db2 "cd /srv/aclarknet-website; make django-static"
 aclarknet-remote-nginx-symlink:
 	ssh db2 "cd /etc/nginx/sites-enabled; sudo ln -sf /srv/aclarknet-website/nginx/www"
 aclarknet-remote-gunicorn-start:
