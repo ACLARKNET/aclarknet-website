@@ -1,0 +1,19 @@
+[Unit]
+Description=www gunicorn daemon
+Requires=www.socket
+After=network.target
+
+[Service]
+PIDFile=/run/www/pid
+EnvironmentFile=/srv/aclarknet-env/www
+User=ubuntu
+Group=ubuntu
+RuntimeDirectory=www
+WorkingDirectory=/srv/aclarknet-website
+ExecStart=/srv/aclarknet-website/bin/gunicorn --pid /run/www/pid --bind unix:/run/www/socket aclarknet.wsgi
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
