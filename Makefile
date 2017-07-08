@@ -68,8 +68,8 @@ UNAME:=$(shell uname)
 # only exists to define a shorter name for its prerequisite.)
 
 # ABlog
-ablog: ablog-wipe ablog-install ablog-init ablog-build ablog-serve  # Chain
-ablog-wipe:
+ablog: ablog-clean ablog-install ablog-init ablog-build ablog-serve  # Chain
+ablog-clean:
 	-rm conf.py index.rst
 ablog-init:
 	bin/ablog start
@@ -83,17 +83,15 @@ ablog-serve:
 	bin/ablog serve
 
 # Django
-db: django-db-wipe django-db-wipe
-django: django-dp-wipe django-proj-wipe django-install django-init django-migrate django-su django-serve  # Chain
-django-db-wipe: django-sql-wipe  # Alias
-django-init: django-db-init django-proj-init  # Chain
-django-db-init: django-sql-init  # Alias
-django-pg-wipe:  # PostgreSQL
+django: django-dp-clean django-proj-clean django-install django-init django-migrate django-su django-serve  # Chain
+django-debug: django-shell  # Alias
+django-init: django-sq-init django-proj-init  # Chain
+django-pg-clean:  # PostgreSQL
 	-dropdb $(PROJECT)
-django-proj-wipe:
+django-proj-clean:
 	@-rm -rvf $(PROJECT)
 	@-rm -v manage.py
-django-sql-wipe:  # SQLite
+django-sq-clean:  # SQLite
 	-rm db.sqlite3
 django-pg-init:  # PostgreSQL
 	-createdb $(PROJECT)
@@ -101,7 +99,7 @@ django-proj-init:
 	-mkdir -p $(PROJECT)/$(APP)
 	-django-admin startproject $(PROJECT) .
 	-django-admin startapp $(APP) $(PROJECT)/$(APP)
-django-sql-init:  # SQLite
+django-sq-init:  # SQLite
 	-touch db.sqlite3
 django-install:
 	@echo "Django\n" > requirements.txt
@@ -112,7 +110,7 @@ django-migrate:
 django-migrations:
 	bin/python manage.py makemigrations $(APP)
 django-serve:
-	bin/python manage.py runserver
+	bin/python manage.py runserver 0.0.0.0:8000
 django-test:
 	bin/python manage.py test
 django-shell:
@@ -121,6 +119,7 @@ django-static:
 	bin/python manage.py collectstatic --noinput
 django-su:
 	bin/python manage.py createsuperuser
+django-user: django-su  # Alias
 django-yapf:
 	-yapf -i *.py
 	-yapf -i -e $(PROJECT)/urls.py $(PROJECT)/*.py  # Don't format urls.py
@@ -242,7 +241,7 @@ install: python-virtualenv python-install  # Alias
 lint: python-lint  # Alias
 serve: python-serve  # Alias
 test: python-test  # Alias
-python-wipe:
+python-clean:
 	find . -name \*.pyc | xargs rm -v
 python-flake:
 	-flake8 *.py
@@ -298,8 +297,8 @@ else
 endif
 
 # Sphinx
-sphinx: sphinx-wipe sphinx-install sphinx-init sphinx-build sphinx-serve  # Chain
-sphinx-wipe:
+sphinx: sphinx-clean sphinx-install sphinx-init sphinx-build sphinx-serve  # Chain
+sphinx-clean:
 	@rm -rvf $(PROJECT)
 sphinx-build:
 	bin/sphinx-build -b html -d $(PROJECT)/_build/doctrees $(PROJECT) $(PROJECT)/_build/html
@@ -315,9 +314,9 @@ sphinx-serve:
 	popd
 
 # Vagrant
-vagrant: vagrant-wipe vagrant-init vagrant-up  # Chain
+vagrant: vagrant-clean vagrant-init vagrant-up  # Chain
 vm: vagrant  # Alias
-vagrant-wipe:
+vagrant-clean:
 	-rm Vagrantfile
 	-vagrant destroy
 vagrant-down:
@@ -328,21 +327,3 @@ vagrant-up:
 	vagrant up --provider virtualbox
 vagrant-update:
 	vagrant box update
-
-# ACLARK website
-.DEFAULT_GOAL=deploy
-APP=website
-PROJECT=aclarknet
-deploy:
-	@$(MAKE) git-commit-auto-push
-	@$(MAKE) pull
-pull:
-	ssh db2 "cd /srv/aclarknet-website; git pull"
-aclarknet-remote-nginx-symlink:
-	ssh db2 "cd /etc/nginx/sites-enabled; sudo ln -sf /srv/aclarknet-website/nginx/www"
-aclarknet-remote-gunicorn-start:
-	ssh db2 "sudo systemctl start www"
-aclarknet-remote-gunicorn-stop:
-	ssh db2 "sudo systemctl stop www"
-aclarknet-remote-gunicorn-restart:
-	ssh db2 "sudo systemctl restart www"
