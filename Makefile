@@ -341,6 +341,6 @@ deploy:
 	@$(MAKE) git-commit-auto-push
 	@$(MAKE) pull
 pull:
-	ssh db "cd /srv/aclarknet-website; git pull"
-	ssh db "cd /srv/aclarknet-website; make django-static"
-	ssh db "sudo systemctl restart www.socket"
+	ssh db2 "cd /srv/aclarknet-website; git pull"
+	ssh db2 "cd /srv/aclarknet-website; make django-static"
+	ssh db2 "sudo systemctl restart www.socket"
