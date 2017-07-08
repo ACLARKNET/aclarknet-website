@@ -339,7 +339,6 @@ deploy:
 pull:
 	ssh db2 "cd /srv/aclarknet-website; git pull"
 	ssh db2 "cd /srv/aclarknet-website; make django-static"
-	ssh db2 "sudo systemctl restart www.socket"
 aclarknet-remote-nginx-symlink:
 	ssh db2 "cd /etc/nginx/sites-enabled; sudo ln -sf /srv/aclarknet-website/nginx/www"
 aclarknet-remote-gunicorn-start:
