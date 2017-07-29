@@ -66,7 +66,7 @@ def contact(request):
             sender = form.cleaned_data['email']
             # AWS SES workaround. Put the sender in the message, and make the recipient (me) the sender too.
             # (http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html)
-            message = '\n'.join(message, sender)
+            message = '\n'.join([message, sender])
             recipients = [settings.EMAIL_FROM]
             sender = recipients[0]
             subject = settings.EMAIL_SUBJECT % now().strftime(
