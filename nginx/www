@@ -18,12 +18,31 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
     }
 }
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    ssl    on;
+    ssl_certificate    /etc/letsencrypt/live/www.aclark.net/fullchain.pem;
+    ssl_certificate_key    /etc/letsencrypt/live/www.aclark.net/privkey.pem;
+
+    root /var/www/html;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name www.aclark.net; 
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    return 301 https://$host$request_uri;
+}
 
 server {
     listen 80;
     listen [::]:80;
 
-    server_name _;
+    server_name aclark.net www.aclark.net;
 
     root /var/www/example.com;
     index index.html;
