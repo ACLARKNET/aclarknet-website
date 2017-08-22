@@ -43,7 +43,7 @@ server {
     listen 80;
     listen [::]:80;
 
-    server_name aclark.net www.aclark.net;
+    server_name _;
 
     root /var/www/example.com;
     index index.html;
