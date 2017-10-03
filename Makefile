@@ -46,10 +46,12 @@
 # https://www.gnu.org/software/make/manual/html_node/Using-Variables.html
 
 APP=app
+DOC=doc
 NAME="Alex Clark"
 PROJECT=project
 TMP:=$(shell echo `tmp`)
 UNAME:=$(shell uname)
+REMOTE=remotehost
 
 # Rules
 #
@@ -83,47 +85,53 @@ ablog-serve:
 	bin/ablog serve
 
 # Django
-django: django-dp-clean django-proj-clean django-install django-init django-migrate django-su django-serve  # Chain
-django-debug: django-shell  # Alias
-django-init: django-sq-init django-proj-init  # Chain
-django-pg-clean:  # PostgreSQL
-	-dropdb $(PROJECT)
-django-proj-clean:
+django-app-clean:
 	@-rm -rvf $(PROJECT)
 	@-rm -v manage.py
-django-sq-clean:  # SQLite
-	-rm db.sqlite3
-django-pg-init:  # PostgreSQL
-	-createdb $(PROJECT)
-django-proj-init:
-	-mkdir -p $(PROJECT)/$(APP)
+django-app-init:
+	-mkdir -p $(PROJECT)/$(APP)/templates
+	-touch $(PROJECT)/$(APP)/templates/base.html
 	-django-admin startproject $(PROJECT) .
 	-django-admin startapp $(APP) $(PROJECT)/$(APP)
-django-sq-init:  # SQLite
-	-touch db.sqlite3
+django-db-clean:  # PostgreSQL
+	-dropdb $(PROJECT)
+django-db-init:  # PostgreSQL
+	-createdb $(PROJECT)_$(APP)
+django-debug: django-shell  # Alias
+django-graph:
+	bin/python manage.py graph_models $(APP) -o graph_models_$(PROJECT)_$(APP).png 
+django-init: django-db-init django-app-init django-settings  # Chain
 django-install:
-	@echo "Django\n" > requirements.txt
-	@$(MAKE) python-virtualenv
+	@echo "Django\ndj-database-url\n" > requirements.txt
 	@$(MAKE) python-install
+django-lint: django-yapf  # Alias
 django-migrate:
 	bin/python manage.py migrate
 django-migrations:
 	bin/python manage.py makemigrations $(APP)
+	git add $(PROJECT)/$(APP)/migrations/*.py
 django-serve:
 	bin/python manage.py runserver 0.0.0.0:8000
 django-test:
 	bin/python manage.py test
+django-settings:
+	echo "ALLOWED_HOSTS = ['*']" >> $(PROJECT)/settings.py
+	echo "AUTH_PASSWORD_VALIDATORS = [{'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', }, { 'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', },]" >> $(PROJECT)/settings.py
+	echo "DATABASES = { 'default': dj_database_url.config(default=os.environ.get( 'DATABASE_URL', 'postgres://%s:%s@%s:%s/%s' % (os.environ.get('DB_USER', ''), os.environ.get('DB_PASS', ''), os.environ.get('DB_HOST', 'localhost'), os.environ.get('DB_PORT', '5432'), os.environ.get('DB_NAME', 'project_app'))))}"
 django-shell:
 	bin/python manage.py shell
 django-static:
 	bin/python manage.py collectstatic --noinput
 django-su:
 	bin/python manage.py createsuperuser
-django-user: django-su  # Alias
 django-yapf:
 	-yapf -i *.py
 	-yapf -i -e $(PROJECT)/urls.py $(PROJECT)/*.py  # Don't format urls.py
 	-yapf -i $(PROJECT)/$(APP)/*.py
+graph: django-graph
+migrate: django-migrate  # Alias
+migrations: django-migrations  # Alias
+su: django-su  # Alias
 
 # Git
 MESSAGE="Update"
@@ -173,6 +181,8 @@ help:
         | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$' | xargs | tr ' ' '\n' | awk\
         '{print "    - "$$0}' | less  # http://stackoverflow.com/a/26339924
 	@echo "\n"
+upstream:
+	git push --set-upstream origin master
 
 # Heroku
 heroku: heroku-init
@@ -190,7 +200,7 @@ heroku-maint-off:
 	heroku maintenance:off
 heroku-push:
 	git push heroku
-heroku-remote:
+heroku-remote-add:
 	git remote add heroku
 heroku-shell:
 	heroku run bash
@@ -198,6 +208,11 @@ heroku-web-on:
 	heroku ps:scale web=1
 heroku-web-off:
 	heroku ps:scale web=0
+
+# Makefile
+make:
+	git add Makefile
+	@$(MAKE) git-commit-auto-push
 
 # Misc
 
@@ -237,7 +252,7 @@ plone-serve:
 	@bin/plone fg
 
 # Python
-install: python-virtualenv python-install  # Alias
+install: python-install  # Alias
 lint: python-lint  # Alias
 serve: python-serve  # Alias
 test: python-test  # Alias
@@ -257,6 +272,8 @@ package-test:
 	bin/python setup.py test
 python-virtualenv:
 	virtualenv .
+python-virtualenv-3:
+	virtualenv --python=python3 .
 python-yapf:
 	-yapf -i *.py
 	-yapf -i $(PROJECT)/*.py
@@ -287,31 +304,44 @@ package-release:
 package-release-test:
 	bin/python setup.py sdist --format=gztar,zip upload -r test
 
+# Redhat
+redhat-update:
+	sudo yum update
+	sudo yum upgrade -y
+
+# Readme
+readme:
+	echo "Creating README.rst"
+	@echo $(PROJECT)-$(APP) > README.rst
+	@echo ================================================================================ >> README.rst
+	echo "Done."
+
 # Review
 review:
 ifeq ($(UNAME), Darwin)
-	@open -a $(EDITOR) `find $(PROJECT) -name \*.py | grep -v __init__.py`\
+	@open -a $(CODE_REVIEW_EDITOR) `find $(PROJECT) -name \*.py | grep -v __init__.py`\
 		`find $(PROJECT) -name \*.html`
 else
 	@echo "Unsupported"
 endif
 
 # Sphinx
-sphinx: sphinx-clean sphinx-install sphinx-init sphinx-build sphinx-serve  # Chain
-sphinx-clean:
-	@rm -rvf $(PROJECT)
 sphinx-build:
-	bin/sphinx-build -b html -d $(PROJECT)/_build/doctrees $(PROJECT) $(PROJECT)/_build/html
-sphinx-install:
-	@echo "ablog\n" > requirements.txt
-	@$(MAKE) python-install
+	bin/sphinx-build -b html -d $(DOC)/_build/doctrees $(DOC) $(DOC)/_build/html
 sphinx-init:
-	bin/sphinx-quickstart -q -p $(PROJECT)-$(APP) -a $(NAME) -v 0.0.1 $(PROJECT)
+	bin/sphinx-quickstart -q -p $(PROJECT)-$(APP) -a $(NAME) -v 0.0.1 $(DOC)
+sphinx-install:
+	@echo "Sphinx\n" > requirements.txt
+	@$(MAKE) python-install
+# https://stackoverflow.com/a/32302366/185820
 sphinx-serve:
-	@echo "\nServing HTTP on http://0.0.0.0:8000 ...\n"
-	pushd $(PROJECT)/_build/html
-	bin/python -m SimpleHTTPServer
-	popd
+	@echo "\n\tServing HTTP on http://0.0.0.0:8000\n"
+	pushd $(DOC)/_build/html; python3 -m http.server
+
+# Ubuntu
+ubuntu-update:
+	sudo aptitude update
+	sudo aptitude upgrade -y
 
 # Vagrant
 vagrant: vagrant-clean vagrant-init vagrant-up  # Chain
@@ -327,6 +357,11 @@ vagrant-up:
 	vagrant up --provider virtualbox
 vagrant-update:
 	vagrant box update
+
+# Webpack
+# Requires npm i -g create-webpack-config
+webpack-init:
+	webpack-config
 
 # aclarknet-website
 APP=website
