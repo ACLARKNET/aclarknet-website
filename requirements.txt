@@ -1,4 +1,4 @@
-Django==1.11.3
+Django==1.11.5
 Pillow==4.3.0
 appdirs==1.4.3
 boto==2.46.1
