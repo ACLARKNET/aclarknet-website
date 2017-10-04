@@ -26,9 +26,7 @@ systemd
 
 ::
 
-    sudo systemctl enable /srv/aclarknet-website/systemd/www.socket 
     sudo systemctl enable /srv/aclarknet-website/systemd/www.service 
-    sudo systemctl start www.socket
     sudo systemctl start www.service 
 
 NGINX
