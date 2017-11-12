@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'aclarknet.website',
     'captcha',
     'crispy_forms',
+    'django_ses',
 ]
 
 MIDDLEWARE_CLASSES = [
