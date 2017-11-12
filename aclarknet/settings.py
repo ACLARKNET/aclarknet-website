@@ -129,3 +129,9 @@ EMAIL_SUBJECT = 'ACLARK.NET, LLC Website — Contact Form Submission %s'
 NOCAPTCHA = True
 RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY', '')
 RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY', '')
+
+# Errors sent to admins
+SERVER_EMAIL = 'aclark@aclark.net'
+ADMINS = [
+    ('Alex', 'aclark@aclark.net'),
+]
