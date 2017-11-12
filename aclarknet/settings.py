@@ -123,7 +123,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Send mail with AWS SES
 EMAIL_BACKEND = 'django_ses.SESBackend'
-EMAIL_FROM = 'website@aclark.net'
+EMAIL_FROM = 'aclark@aclark.net'
 EMAIL_SUBJECT = 'ACLARK.NET, LLC Website — Contact Form Submission %s'
 
 # Recaptcha
