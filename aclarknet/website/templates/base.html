@@ -8,12 +8,10 @@
     <meta name="author" content="">
     <title>ACLARK.NET, LLC &mdash; Website</title>
     <link rel="icon" href="{% static 'favicon.ico' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="{% static 'aclarknet-website.css' %}">
-    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'aclarknet.css' %}">
     <link rel="stylesheet" href="{% static 'carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
     <style>
       body {
         background:
@@ -27,39 +25,32 @@
   </head>
   <body>
 {% include 'nav.html' %}
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
         </nav>
-        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 mt-3 pt-3">
 {% include 'messages.html' %}
 {% block carousel %}
 {% endblock %}
 {% block content %}
 {% endblock %}
         </main>
-        <footer class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-          <hr class="featurette-divider">
+        <footer class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 mt-5 py-5" style="border-top: 1px solid #eee;">
           <div class="row">
             <div class="col-md-10">
               <p>&copy; ACLARK.NET, LLC 2004 &mdash; 2017. All rights reserved.</p>
-              <p>Python&trade; is a registered trademark of the <a href="https://www.python.org/psf-landing/">Python Software Foundation</a>. All other trademarks mentioned on this website are the property of their respective owners. Icons by <a href="http://fontawesome.io/">Font Awesome</a>. Photos by <a href="{% url 'team' %}#aclark">Alex Clark</a> except where otherwise noted. Theme made with <a href="https://getbootstrap.com/">Bootstrap</a>.</p>
             </div>
             <div class="col-md-2" style="text-align: center">
-              <p><a href="https://github.com/ACLARKNET/aclarknet-website"><i class="fa fa-github fa-2x"></i></a> <a href="https://github.com/ACLARKNET/aclarknet-website"></i></a></p>
-              <p><a href="{% url 'contact' %}">Contact</a></p>
               <p><a href="#">Back to top</a></p>
             </div>
           </div>
         </footer>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="{% static 'aclarknet-database.js' %}"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
     <!-- Font Awesome -->
     <script src="//use.fontawesome.com/ff20ba2d1c.js"></script>

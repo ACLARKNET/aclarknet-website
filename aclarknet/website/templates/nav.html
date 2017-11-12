@@ -1,18 +1,21 @@
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="{% url 'home' %}">ACLARK.NET, LLC</a>
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">  <!-- http://stackoverflow.com/a/25044880/185820 -->
-          <li class="nav-item {% if active_nav == 'about' %}active{% endif %}"><a class="nav-link" href="{% url 'about' %}">About</a></li>
-          <li class="nav-item {% if active_nav == 'clients' %}active{% endif %}"><a class="nav-link" href="{% url 'clients' %}">Clients</a></li>
-          <li class="nav-item {% if active_nav == 'contact' %}active{% endif %}"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
-          <li class="nav-item {% if active_nav == 'projects' %}active{% endif %}"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
-          <li class="nav-item {% if active_nav == 'services' %}active{% endif %}"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
-          <li class="nav-item {% if active_nav == 'team' %}active{% endif %}"><a class="nav-link" href="{% url 'team' %}">Team</a></li>
-          <li class="nav-item {% if active_nav == 'testimonials' %}active{% endif %}"><a class="nav-link" href="{% url 'testimonials' %}">Testimonials</a></li>
-{% include 'dropdown.html' %}
-        </ul>
-      </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: #444854">
+  <a class="navbar-brand" href="{% url 'home' %}">ACLARK.NET, LLC</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item {% if active_nav == 'about' %}active{% endif %}"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+      <li class="nav-item {% if active_nav == 'clients' %}active{% endif %}"><a class="nav-link" href="{% url 'clients' %}">Clients</a></li>
+      <li class="nav-item {% if active_nav == 'contact' %}active{% endif %}"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+      <li class="nav-item {% if active_nav == 'projects' %}active{% endif %}"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
+      <li class="nav-item {% if active_nav == 'services' %}active{% endif %}"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
+      <li class="nav-item {% if active_nav == 'team' %}active{% endif %}"><a class="nav-link" href="{% url 'team' %}">Team</a></li>
+      <li class="nav-item {% if active_nav == 'testimonials' %}active{% endif %}"><a class="nav-link" href="{% url 'testimonials' %}">Testimonials</a></li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
