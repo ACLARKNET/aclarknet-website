@@ -1,9 +1,4 @@
-[Unit]
-Description=www gunicorn daemon
-After=network.target
-
 [Service]
-PIDFile=/run/www/pid
 EnvironmentFile=/srv/aclarknet-env/www
 User=ubuntu
 Group=ubuntu
