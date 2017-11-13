@@ -125,8 +125,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 EMAIL_BACKEND = 'django_ses.SESBackend'
 EMAIL_FROM = 'aclark@aclark.net'
 EMAIL_SUBJECT = 'ACLARK.NET, LLC Website — Contact Form Submission %s'
-AWS_SES_REGION_NAME = 'us-east-1'
-AWS_SES_REGION_ENDPOINT = 'email.us-east-1.amazonaws.com'
 
 # Recaptcha
 NOCAPTCHA = True
