@@ -12,6 +12,7 @@
       <li class="nav-item {% if active_nav == 'services' %}active{% endif %}"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
       <li class="nav-item {% if active_nav == 'team' %}active{% endif %}"><a class="nav-link" href="{% url 'team' %}">Team</a></li>
       <li class="nav-item {% if active_nav == 'testimonials' %}active{% endif %}"><a class="nav-link" href="{% url 'testimonials' %}">Testimonials</a></li>
+{% include 'dropdown.html' %}
     </ul>
   </div>
 </nav>
