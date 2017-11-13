@@ -136,3 +136,5 @@ SERVER_EMAIL = 'aclark@aclark.net'
 ADMINS = [
     ('Alex', 'aclark@aclark.net'),
 ]
+# https://docs.djangoproject.com/en/1.11/ref/settings/#default-from-email
+DEFAULT_FROM_EMAIL = 'aclark@aclark.net'
