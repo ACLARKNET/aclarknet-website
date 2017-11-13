@@ -376,6 +376,8 @@ aclarknet-remote-app-update:
 	@$(MAKE) git-commit-auto-push
 	@$(MAKE) aclarknet-remote-git-pull
 	@$(MAKE) aclarknet-remote-gunicorn-restart
+aclarknet-remote-install:
+	ssh db "cd /srv/aclarknet-website; bin/pip3 install -r requirements.txt"
 aclarknet-remote-static:
 	ssh db "cd /srv/aclarknet-website; bin/python3 manage.py collectstatic --noinput"
 aclarknet-remote-git-pull:
