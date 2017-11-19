@@ -78,8 +78,8 @@ WSGI_APPLICATION = 'aclarknet.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('HEROKU_POSTGRESQL_BRONZE_URL',
-                               'postgres://%s:@localhost:5432/aclarknet' %
+        default=os.environ.get('DATABASE_URL',
+                               'postgres://%s:@localhost:5432/aclarknet_database' %
                                os.environ.get('USER', '')))
 }
 
@@ -117,7 +117,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'website', 'static'), )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
