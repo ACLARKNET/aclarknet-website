@@ -38,10 +38,10 @@
         </nav>
 
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+{% include 'messages.html' %}
 {% if show_carousel %}
 {% include 'carousel.html' %}
 {% endif %}
-{% include 'messages.html' %}
 {% block content %}
 {% endblock %}
         </main>
