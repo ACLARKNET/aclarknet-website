@@ -71,7 +71,7 @@ def contact(request):
                 '%m/%d/%Y %H:%M:%S')
             send_mail(subject, message, settings.EMAIL_FROM, recipients)
             messages.add_message(request, messages.SUCCESS, msg)
-            return HttpResponseRedirect(reverse('contact'))
+            return HttpResponseRedirect(reverse('home'))
     else:
         form = ContactForm()
     context['form'] = form
