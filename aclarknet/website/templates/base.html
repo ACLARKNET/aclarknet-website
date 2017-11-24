@@ -35,26 +35,7 @@
     <div class="container-fluid">
       <div class="row">
         <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
-          <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'book' %}">Book</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog' %}">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'history' %}">History</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'location' %}">Location</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'open-source' %}">Open Source</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'community' %}">Community Service</a>
-            </li>
-          </ul>
+{% include 'sidebar.html' %}
         </nav>
 
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
