@@ -25,22 +25,6 @@ h1 {
     background: transparent;
     text-align: center;
 }
-.logo-django {
-    width: 320px;
-    margin: 0 2rem 1rem 0;
-}
-.logo-plone {
-    width: 320px;
-    margin: 0 2rem 1rem 0;
-}
-.logo-zope {
-    width: 320px;
-    margin: 0 2rem 1rem 0;
-}
-.logo-python {
-    width: 320px;
-    margin: 0 2rem 1rem 0;
-}
 a:hover {
     text-decoration: none;
 }
